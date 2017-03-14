@@ -2,28 +2,21 @@
 
 A presentation by Clive Brown, CTO Oxford Nanopore Technologies; notes by David Eccles, 2017-Mar-15
 
-*Note: due to time zone differences, dates may appear to be a little odd*
+## Preface
 
-Some people watching this in Australia 3am
-
-1ce-yearly update, shortly before main conference in May, a few things to save for meeting in London
-
-Company mission: anybody to sequence anything anywhere
-
-Publications / elsewhere: people attempting to use technology in lots of places
-
-Technology designed to be used anywhere, v. simple workflows.
-
-Main device minION is portable, minimal capital cost. System is
-effectively real-time, or v. close to real time. Demand driven - can be used, put down and taken uptime
-
-Read lenghtsd intrinsically long, limited by sample prep
-Accuracy pretty good, improving
-
-good at cDNA, probably undersold
-
-Other previous talks. Last google hangout at end of march is good place to start
-
+* Some people watching this in Australia 3am [and David Eccles in New Zealand at 4am]
+* This is Clive's once-yearly update, given shortly before the main conference in May. A few things will be saved for the meeting in London
+* Company mission: enable anybody to sequence anything anywhere
+* Publications / elsewhere demonstrate that people are already attempting to use the MinION technology in lots of places
+* The technology is designed to be used anywhere, with very simple workflows.
+* Main device (MinION) is portable, with minimal capital cost
+* System is effectively real-time, or very close to real time
+* System is demand driven -- can be used, put down and taken up again many times
+* Read lengths are intrinsically long, limited only by sample prep
+* Accuracy is pretty good, and improving
+* Sequencer is good at cDNA; this aspect has probably been undersold
+* This talk doesn't cover everything available. Clive Brown has given a few other previous previous talks
+* The last google hangout at end of March [2016] is a good place to start
 
 ## How nanopore sequencing works
 
@@ -38,7 +31,7 @@ Other previous talks. Last google hangout at end of march is good place to start
 
 ## decoding signals
  * originally done by HMM
- * explosiion in past 2 years around neural networks
+ * explosion in past 2 years around neural networks
  * now good experience decoding signals using NNs
  * many methods in signal processing area that could be used
  * current methods can learn local context over a window
@@ -48,7 +41,7 @@ Other previous talks. Last google hangout at end of march is good place to start
  * Aluminium device
  * Inject liquid sample into system, pores devour sample in real time
  * 512 channels running at once, can get at 450b/s/channel v. high throughput
- * Mark Ib * no significant improvements planned in MinION
+ * Mark Ib -- no significant improvements planned in MinION
 
 ## Technology workflow
  * Clive doesn't like slide: implies linear workflow
@@ -58,9 +51,9 @@ Other previous talks. Last google hangout at end of march is good place to start
  * Can take sample out, can flush sample out, can put more in, can muck with sample while it's in the system
  * While running, run NN basecaller
  * Calling can be done on the fly, or post-run
- * Programmable feedback loop; feature to come back with avengence in future
+ * Programmable feedback loop; feature to come back with a vengeance in future
 
-## Promethion; elephant in the room
+## PromethION; elephant in the room
  * Cake-tin sized benchtop sequencer
  * Different ASIC, a few thousand channels, in aggregate 144,000 channels
  * Laid out to be pipette friendly
@@ -69,13 +62,13 @@ Other previous talks. Last google hangout at end of march is good place to start
  * Box was designed when running at 30b/s, probably can't handle a full run for real-time basecalling
  * Running at full-pelt can produce a very large 233Gb per flow cell in 48h, 11Tb assuming 100% bandwidth utilisation,
    3x a NovaSeq; right up there in that category of high-througphut sequencers
- * No chance of falling behind; not going out of date before the box
+ * No chance of falling behind; not going out of date before the box is delivered
 
-## On-demand sequencing on PromethINON
+## On-demand sequencing on PromethION
  * All kinds of workflow tricks to optimise pipelines
  * No need to wait for sample, can run 3 samples, 1 sample, 48, or multiplex
  * Can deal with lumpy demand
- * TAT basically limited by postage
+ * Turn-around time basically limited by postage
  * Can be shipping data back while running
  * If not enough slots, can just buy more sequencers
  * When fully deployed, will provide significant competitive advantage
@@ -88,7 +81,7 @@ Other previous talks. Last google hangout at end of march is good place to start
  * Not novices for scaling; Gordon worked on Glucose blood strips
  * Working to produce more flow cells
 
-## Promethion performance and yield
+## PromethION performance and yield
  * Key problem to do with flow cell blocking
  * Promethion typically 10Gb in 6 hours, aim >50Gb per flow cell
  * Firmware updates for higher
@@ -98,17 +91,17 @@ Other previous talks. Last google hangout at end of march is good place to start
 
 ## Instrument shipping
  * 1-2 per week, a bit slower than expected
- * expect all backorder done by Q3 (i.e. same as last year)
+ * expect all backorder done by Q3 (original prediction was Q3 2016)
  * Putting in software that lets ONT do remote firmware updates
- * Ability to swap out hardware/software v. quickly
+ * Ability to swap out hardware/software very quickly
 
-## Promething Flow cells
- * First shipping 1st april to 12 sites
- * a little bit of hand-holding, will ramp rate of flow cell shipping after thant
- * Haven't had a single dropoint from waiting list
+## PromethION Flow cells
+ * First shipping 1st April to 12 sites
+ * a little bit of hand-holding, will ramp up rate of flow cell shipping after that
+ * Haven't had a single dropout from waiting list
  * target headroom performance is so high that it will not go out of date
 
-## Promethion design change
+## PromethION design change
  * Compute module will not be able to keep up with 1,000 bases per second
  * Need a bigger box, getting too tall
  * Decided to move all of the computing into a separate box
@@ -119,7 +112,7 @@ Other previous talks. Last google hangout at end of march is good place to start
  * Will map consensus callers and assemblers in box
  * Can use idle computing for local bioinformatics; e.g. containerised workflows
  * Network requirements much simpler for a single compute box
- * To be rolled out
+ * To be rolled out; upgrades included in the cost of purchase
 
 ## What's inside the compute box
  * Cramming in FPGAs on PCIe cards, easily 60Mb/s, 80 TFLOPs
@@ -140,27 +133,26 @@ Other previous talks. Last google hangout at end of march is good place to start
 ## Base call acceleration design
  * Typically 1.8 events per base, very high requirements
  * MinION at full output needs 200 GFLOPs
- * writing openCL versions of base callers, unlikely to be as optimal as VHDL
+ * writing OpenCL versions of base callers, unlikely to be as optimal as VHDL
 
 ## Base call benchmarking
- * Wroking closely with Intel
+ * Working closely with Intel
  * MinION about 240kb/s
  * Promethion about 65,000 kb/s
  * Can only utilise around 10% of available CPU
  * on GPUs, seem to only be able to use about 2% of GPUs; not a good performance payoff
  * on i7-type CPUs, can process 200,000 bases/s, still only using ~10%
- * on Intel Arria / Stratix, getting to 1M-7.5M bases per second, using 60% of available processing power
+ * on Intel Arria / Stratix, getting to 1M-7.5M called bases per second, using 60% of available processing power
  * pretty confident that this is the way to go
 
 ## PromethION base call implementation
  * current generation 9Mb/s, almost a Tb per day currently
  * second generation of cards up to 4Tb of real-time calling per day
- * looked at accellerator for MinION... but you can do that
- * coding in the background a dongle, either separate or intercalated between MinION and computer that
-   * will do local basecalling, stream out reads
+ * looked at accelerator for MinION... but you can do that
+ * coding in the background a dongle, either separate or intercalated between MinION and computer that will do local basecalling, and stream out reads to the computer
 
 ## MinION compute requirements
- * Cloud base calling currently * Clive's fault that ONT did that
+ * Cloud base calling currently - Clive's fault that ONT did that
  * If you provide a safety net, people start to use it
  * Cloud base calling will be discontinued at 21st March
  * MinKNOW now has integrated basecaller which will do it for you
@@ -183,14 +175,14 @@ Other previous talks. Last google hangout at end of march is good place to start
  * Will think about releasing optimised consensus callers in a reasonable timeframe
 
 ## Homopolymers
- * ONT's unfinished business is held up by detractors
+ * ONT's unfinished business is held up by detractors; fixed by ONT, then detractors move onto the next unfinished business
  * Scrappie package, learnings are migrating into MinKNOW base calling
 
 ## Novel base calling
  * Working from raw data (more about that later)
 
 ## Homopolymer
- * Recently held up by competitor; just another obstacle to overcome (e.g. black knight in Monty Python)
+ * Recently held up by competitor as a systematic flaw; just another obstacle to overcome (e.g. black knight in Monty Python)
  * Scrappie doing fairly well, consensus calling of homopolymers can be done using scrappy output
  * not as mature as other callers, but methods will only improve
 
@@ -218,7 +210,7 @@ Other previous talks. Last google hangout at end of march is good place to start
  * A middle ground between basic and power users
 
 ## Throughput
- * Clive takes own blood (with help); gets 20G per flow cell
+ * Clive took his own blood (with help), sequenced it himself, gets 20G per flow cell
  * Other customers typically between 3-11G; would be nice to get everyone up to 20-30Gb
  * This still only represents about 20-30% of what is possible
  * Lots of reasons, many to do with extraction; people not knowing how much DNA they're putting in
@@ -231,10 +223,10 @@ Other previous talks. Last google hangout at end of march is good place to start
 
 ## Read length
  * Read length = fragment length
- * Present pore with Mb, will produce Mb reads
+ * If a pore is presented with megabase sequences, it will produce megabase reads
  * Other systems will fail due to photodamage
  * If you can figure out how to get molecules into the system, can produce reads
- * Josh Quick / Nick Loman managed long reads, largely by avoiding pipetting
+ * Josh Quick / Nick Loman managed long reads (>750kb), largely by avoiding pipetting
   * have accomplished N50s of 60/70kb
  * Probably no limit; limit is what can be put in. Clive expects 7Mb sequence should be able to be done
  * Some nutcases at ONT think you can do whole chromosomes
@@ -242,7 +234,7 @@ Other previous talks. Last google hangout at end of march is good place to start
 
 ## Upcoming improvements for throughput and sensitivity
  * MinKNOW upgrade, improved unblocking
- * Lifetime of flow cell improved by 50%, yield per flow cell and cost per base goes up concomitantly
+ * Lifetime of flow cell improved by 50%, yield per flow cell and cost per base goes up concommitantly
  * Working on releasing an official read-until
  * Working group looking on samples people are looking at, looking at best library prep to give best output
 
@@ -271,14 +263,14 @@ Other previous talks. Last google hangout at end of march is good place to start
  * Second molecule is complement of DNA
  * With some trickery, can make second molecule hang around for longer
  * 60% of data comes in template/complement pairs; expect that ONT can get that higher
- * Can get v. high 1D^2 yields at 450b/s
+ * Can get very high 1D^2 yields at 450b/s
 
 ## 1D^2 accuracy
  * Modal accuracy of 97/98%, a proportion are above 99%
  * Long stretches of perfect data
  * Algorithm is not fully optimal
  * Would like modal accuracy to 99%
- * Base-caller was not Scrappie, so at least HP issues
+ * Base-caller was not Scrappie, so at least has homopolymer issues
  * Will need to change to R9.5 pore; better at capturing second signal
  * Can still generate 1D reads
  * consensus calling know what pairs are, helps polishing
@@ -287,13 +279,13 @@ Other previous talks. Last google hangout at end of march is good place to start
 
 ## 1D^2 release
  * To developers 27th March, developer kit + base caller
- * general release to community 3rd may
+ * general release to community 3rd May
  * 2D kits discontinued on 5th May
 
 ## New product; MinION well established
  * Over 4,000; just started pushing into China, India, Japan
  * workflow getting better, work to do on input material
- * aim to make more runnable
+ * Aim to make more runnable
  * MinION not licensed for service sequencing; makes sense to Clive & Spike, but not anybody else
  * MinION is your personal sequencer
 
@@ -303,13 +295,13 @@ Other previous talks. Last google hangout at end of march is good place to start
 
 ## GridION
  * Will make GridION X5 available
- * the Sequel, because it follows on from both MinION / GridION
+ * the sequel, because it follows on from both MinION / GridION
 
 ## What is GridION
  * Original system that was proposed by Clive / ONT
- * Tore up in 2011
+ * Designed around loading membranes in the lab; tore up design in 2011 to change to loading at ONT
  * Concept is sound: large arrayable computers that can work together or individually on samples
- * For a long time, wasn't taken off website
+ * For a long time, GridION wasn't taken off website
 
 ## GridION X5
  * Bench-top format, a big MinION
@@ -375,7 +367,7 @@ Other previous talks. Last google hangout at end of march is good place to start
  * Scrappie avialable for developer licenses, some in MinKNOW
  * PromethION compute box can be made rack-mountable (part of roadmap, but need to see demand first)
  * Switch box / old compute module can have different output options
- * Optiomal temperature for sequencing * temp rises, sequencer runs quickly
+ * Optiomal temperature for sequencing - temp rises, sequencer runs quickly
    * probably no problem at 50 degrees, not sure about colder
  * Lifetime for flow cells * up to 4 days
  * How much DNA is needed to make 20Gb?
