@@ -1,2 +1,2 @@
-# presentation-notes
-Notes from presentations that I have seen
+# Presentation Notes
+Presentations seen and transcribed by David Eccles
