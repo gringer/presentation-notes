@@ -4,3 +4,4 @@ A presentation by Clive Brown, CTO Oxford Nanopore Technologies; notes by David 
 
 *Note: due to time zone differences, dates may appear to be a little odd*
 
+... Awaiting start of presentation ...
