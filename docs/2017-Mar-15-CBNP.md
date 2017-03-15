@@ -96,7 +96,7 @@ A presentation by Clive Brown, CTO Oxford Nanopore Technologies; notes by David 
  * Ability to swap out hardware/software very quickly
 
 ## PromethION Flow cells
- * First shipping 1st April to 12 sites
+ * First shipping 3rd April to 12 sites
  * a little bit of hand-holding, will ramp up rate of flow cell shipping after that
  * Haven't had a single dropout from waiting list
  * target headroom performance is so high that it will not go out of date
