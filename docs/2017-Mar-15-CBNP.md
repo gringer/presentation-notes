@@ -1,6 +1,6 @@
 # GridION X5 - The Sequel
 
-A presentation by Clive Brown, CTO Oxford Nanopore Technologies; notes by David Eccles, 2017-Mar-15
+A presentation by Clive Brown, CTO Oxford Nanopore Technologies; notes by David Eccles, 2017-Mar-15. Register to see the presentation [here](https://register.nanoporetech.com/webcast-clive-brown).
 
 ## Preface
 
