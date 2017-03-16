@@ -153,7 +153,7 @@ A presentation by Clive Brown, CTO Oxford Nanopore Technologies; notes by David 
 
 ## MinION compute requirements
  * Cloud base calling currently - Clive's fault that ONT did that
- * If you provide a safety net, people start to use it
+ * If you provide a safety net, people start to use it as a hammock
  * Cloud base calling will be discontinued at 21st March
  * MinKNOW now has integrated basecaller which will do it for you
  * A good high-performance laptop will be fine
