@@ -6,15 +6,18 @@ Presentation notes on London Calling, written by David Eccles.
 
 ### Clive Brown
 
-[evening for Clive brown is after 6pm]
-
 #### Novel statements selected by David Eccles
  * Thinking of making a GridION version that has PromethION flow cells
  * PromethION Will also do a 4-way MUX (max 10,400 wells)
  * New chemistry coming which will increase MinION yield by 20-30%
  * Accuracy should get to 99.9% [q30] by the end of this year (possibly this summer)
  * Updated pore [technology development] has two times read-ahead, and should be able to model up to 30bp homopolymers
+ * A reasonable user will be able to knit their own clothes using nanopore packaging
+ * Have been able to get a metal-metal interface working on the Flongle
+ * A sequencer that doesn't do base calling -- Clive's pet project for the rest of the year
  
+[evening for Clive brown is after 6pm]
+
 #### Goal of ONT: Anyone sequencing anything anywhere
 
 * Most products are targeted at this gooal
@@ -199,10 +202,112 @@ Presentation notes on London Calling, written by David Eccles.
   * People here have shown that things are visible in the signal
 
 #### New pores
- * Also working on new pores
+ * Also working on new pores; patent has just been published on this
   * In the future, will now never replace pores, just migrate pores
  * **Updated pore has two times read-ahead**
   * should be able to span 30bp homopolymers
   * may have new pore by the end of summer
 
-[3 more pages (of 8) Clive Brown notes to go,,,]
+#### Raw Calling
+ * A lot of work done on this
+ * Captured on FPGA
+ * Pretty close now to comparable performance to what is done now
+ * Making available raw data base caller now
+ * Any useful software will migrate to MinKNOW
+ * Want to just output FASTQ
+
+#### Removing cold-chain system
+ * Can now store and ship new packaging in wool
+  * Creating jobs for sheep
+  * **A reasonable user will be able to knit their own clothes using nanopore packaging**
+ * A lot of work being done to make a lyophilised reagent system
+ * Performance is comparable to conventional wet reagents
+ * 1D² version will be available shortly
+
+#### Pipettes
+ * That leaves pipettes; pipettes have to go
+ * Need to encapsulate prep into a dry / warm container
+ * Reagents put into prototype tube
+ * There will come a point when you can put a swab in, and 15-20mins later start looking at reads
+ * Not quite there to show with date or product yet
+
+#### Increasing sensitivity
+ * Can currently do well down to about 1ng
+ * can go even lower (with reduced yield)
+
+#### Additional device with new name needed
+ * Dongle with FPGA and firmware
+ * Can basecall MinION sequences
+ * Encapsulated supercomputer
+ * Computer can be cheap and small
+ * Device will eventually be able to work on its own (with connected power supply)
+ * Should be out by the end of summer
+ * FPGA currently Intel Arria 10, runs at 10Mb per second
+  * Next version will be 7Mb per second
+ * Theme is portability: want to make things as easy as possible
+
+#### Flongle
+ * Electronics moved onto dongle
+ * One-off buy, can be thought of as a mkII MinION
+ * Cheaper flow cell snaps into adapter
+ * Fewer channels, higher volume [DE: presumably production volume], cheaper price
+ * The substrate device... the MinION they should have made
+  * Very significant for ONT
+  * Should be out by the end of the year
+ * Previously had gel-gel interface
+  * **Can now get metal/metal interface**
+  * have prototype chips and membranes at the other end of the scale
+  * was actually a prototype used for the SmidgION
+
+#### SmidgION
+ * Won't be around this year, but it will come
+ * Chris has been able to run a MinION on a mobile phone
+
+#### Hypothesis-driven sequencing
+ * Looking to develop this
+ * There are a lot of things that can be done with nanopores
+ * Blob counting: sequencing of site-specific things
+  * Let sequences whizz through the pore
+  * Blob does the counting
+  * Very rapid yes/no sequencing
+  * Getting to very rapid MinION sequencing
+
+#### Solid-state nanopores
+ * Will be solid-state Flongle; will definitely [DE: also] be a blob counter
+
+#### Cas9
+ * Can be programmed: a programmable blob
+ * Target certain fragments
+ * Use chemistry to select out molecules for sequencing
+ * Can use the same trick for detection as well
+ * Have pretty good working implementation of Cas9 target selection
+ * Multiplexing
+  * Very cost-effective for small region for thousands of samples
+  * "Cas Me If You Can"
+  * Custom Cas9 provided by ONT
+  * Also planning to make pre-made versions
+
+#### Dates
+ * May
+  * MinKNOW 1D² 9.5
+  * 8th: new flow cell
+ * June 17th (Clive Brown's birthday): raw basecaller
+ * June 30th: new cDNA kits
+ * July: new ambient shipping methods
+ * September: Cas Me If You Can
+
+#### Epitome
+ * Make standard Bioinformatics workflows
+ * Platform is now pretty mature
+
+#### Is Basecalling Necessary?
+ * Do you need to basecall and align?
+ * Have been teaching neural networks to look at raw signal to decide what species it is
+ * Want to go from squiggle
+ * There are cases that don't require base calling
+  * **A sequencer that doesn't do base calling -- Clive's pet project for the rest of the year**
+
+#### Questions
+ * Gordon's ambition is to put the Flongle in as a diagnostic device
+ * Consensus reading errors: just a matter of knocking downm the obvious problems
+  * If ONT runs into non-software problems, just need to change the chemistry
