@@ -204,3 +204,5 @@ Presentation notes on London Calling, written by David Eccles.
  * **Updated pore has two times read-ahead**
   * should be able to span 30bp homopolymers
   * may have new pore by the end of summer
+
+[3 more pages (of 8) Clive Brown notes to go,,,]
