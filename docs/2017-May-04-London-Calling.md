@@ -8,6 +8,10 @@ Presentation notes on London Calling, written by David Eccles.
 
 [evening for Clive brown is after 6pm]
 
+#### Novel statements selected by David Eccles
+ * Thinking of making a GridION version that has PromethION flow cells
+ * PromethION Will also do a 4-way MUX (max 10,400 wells)
+
 #### Goal of ONT: Anyone sequencing anything anywhere
 
 * Most products are targeted at this gooal
@@ -88,3 +92,21 @@ Presentation notes on London Calling, written by David Eccles.
 
 #### PromethION
 
+ * Designed 3 years ago, everything is completely new
+ * Was designed to take on Illumina
+ * In principle, will generate more data than a NovaSeq
+  * Head room is so much that even if NovaSeq is brought forward, will still be competitive
+ * Have 12-14 boxes out now, produces a ton of data
+  * **Bulk purchase cost of flow cells is about $600**
+  * Just sit tight
+ * Can de-batch the entire workflow
+  * e.g. 50 samples on a Wednesday, one sample the next day; more real time and less batched
+ * PromethION is licensed as fee-for-service
+ * Flow cell has a different layout
+  * A few issues remain, but nothing that hasn't been seen before with the MinION
+  * Even with issues, getting 22 Gb in 22 hours [DE: I recall there was a '23' somewhere]
+   * Active unblock is not yet fixed on the PromethION
+   * Flow cell run time has been increased to 4 days
+   * **Will also do a 4-way MUX (max 10,400 wells)**
+ * Even if just using similar output to a MinION, is still better than NovaSeq
+ 
