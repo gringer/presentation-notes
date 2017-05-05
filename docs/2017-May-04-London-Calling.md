@@ -53,3 +53,38 @@ Presentation notes on London Calling, written by David Eccles.
  * Probably some protocol issues; some samples don't yield much DNA
  * People are now using VolTRAX to give consistent yield; flow cell is now tip top
 
+#### GridION
+
+ * Started as a modular rack-mounted system with reagents, dynamically forming membranes and sequencing
+ * Abandoned this approach, but left it parked on the website
+ * New GridION is modular
+ * **Thinking of making a version that has PromethION flow cells**
+ * Will have Run Until and Read Until
+ * People are licensed to use the GridION for commercial use
+ * Can alternatively use five MinIONs, with laptops, software, etc.
+  * Process is all automated on the GridION
+ * Box can do real-time online basecalling
+
+##### FPGAs
+
+ * Internal effort to map data processing into FPGAs
+ * Can call 1 million bases per second at the moment
+ * Not as much success with GPU / CPU
+ * Gives very fast feedback, even with a high number of pores
+
+##### Funding model
+
+ * ONT doesn't like the idea of how people pay for things
+ * Preferred model is consumable only; almost Pay-As-You-Go, with contracted minimum
+  * This has been the most popular model
+
+##### Manufacturing
+
+ * Box is very highly manufacturable
+ * After June, should be able to make 3 per day
+ * Shipping in about 48 hours
+ * Flow cells have about a 48 hour delivery
+ * First GridION out on the 15th May, might be the same GridION used for the Cliveome, but maybe not
+
+#### PromethION
+
