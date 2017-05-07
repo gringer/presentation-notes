@@ -2,7 +2,7 @@
 
 Presentation notes on London Calling, written by David Eccles.
 
-## Day 1 (May the Fourth)
+## Day 1 (May the Fourth be with You)
 
 ### Clive Brown
 
@@ -311,3 +311,72 @@ Presentation notes on London Calling, written by David Eccles.
  * Gordon's ambition is to put the Flongle in as a diagnostic device
  * Consensus reading errors: just a matter of knocking downm the obvious problems
   * If ONT runs into non-software problems, just need to change the chemistry
+
+## Day 2 (May fhe Fifth)
+
+### Kazuharu Arakawa
+
+#### Starting with the very basics
+ * needed to do sequencing, so was investigating Nanopore
+ * Looked at bacterial draft genome
+  * Used MinION reads to finish genomes
+  * "how low can you go?"
+  * In under 1hr, was able to complete a full genome with one 4.4Mb circular chromosome and one 44kb plasmid
+
+#### Spider silk
+ * 4 times stronger than steel
+ * in nature, about 10µm in diameter
+ * More elastic than nylon
+ * it's weird to have both high strength and high elasticity
+  * has the highest "toughness" [combination of strength and elasticity] among all fibres
+  * Made from proteins, so it's re-usable
+ * If spinning a web with 1cm-diameter silk, it would be possible to catch a plane
+  * If that same web were made of steel, the plane would crash and break into pieces
+  * If that same web were made of rubber, the plane would break through
+ * Did an experiment comparing spider silk to carbon fibre and polyester
+  * Spider silk was able to handle more weight than both of them
+  * Carbon fibre broke fairly quickly
+  * Polyester stretched too much and broke
+
+#### Spiber
+ * Company set up by former institute members
+ * Taking spider genes and putting them into bacteria
+ * Creating clothes like the Moon Parker
+ * Can be made into sheets, gels, and other non-thread things
+
+#### Silk diversity
+ * Spiders make a whole lot of different spider silks
+ * All silk genes are monophylogenetic (from the same original gene)
+ * With enough data about the genetics and properties, can work out how amino acid changes affect the properties
+ * Will sequence 1,000 spiders (for funding purposes)
+  * Has already done a lot of those [? over 900]
+ * Spider genomes are quite long
+ * Don't really know what components are in the genes
+  * One gene has periodic polyalanines
+  * Can only find 10 spider silk genes in GenBank
+
+#### MinION categorisation of genes
+ * Can't do PCR because of repeats
+ * Next time, got a better yield
+ * Did whole-genome sequencing at 2-3X coverage, got N50 of about 10kb
+ * The challenge is to find entire components of spider silk
+ * Protein fractionation yielded 3 bands that were very specific to drag-line silk
+  * Did gland-specific transcriptome
+  * Looked at top 50 most expressed genes
+  * Novel genes were found that corresponded to the gland in the spider
+  * But first, they needed to clone the genes
+ * Tried cloning, sorted out and cloned two genes
+ * The other two genes were actually different components of the same gene
+  * sequenced 2.4kb
+  * use MiNION to finish it
+  * no conserved N-terminal sequence
+
+#### Questions
+ * Only saw repeat elements within spider silk genes
+
+### Zoe
+ * ONT can probably fit another 200 seats in the venue for next year
+
+### Gordon Sanghera
+ * Get back to your labs and get innovating
+ 
