@@ -337,9 +337,64 @@ Presentation notes on London Calling, written by David Eccles.
   * Can degrade over time
   * Comparison of fresh sample vs. ultra-pure sample, no difference in high-quality reads regardless of the isolation method or storage
   * QC changes when looking at reads longer than 50kb
-  
+
+#### Melon sequencing
+ * Decided to use DNA that was less than one month old
+ * Other crops may need purification
+ * Compared 75% of the shortest reads to 75% of the longest reads
+ * Longer reads have contigs over twice the length of the shortest reads
+
+#### Generic workflow
+ * Isolation of nuclei
+ * Want to hunt for ultra-long reads
+ * Use agarose-embedded nuclei
+ * Needs a lot of work in the lab to get ultra-pure DNA
+ * If the fragment length is greater than 25kb, typically end up with read lengths of greater than 15kb
+ * New albacore improves the read quality
+ * Expect to generate platinum assemblies from plants
 
 ### Plenary Panel -- Ivo Gut
+
+ * This sequencing stuff is a bit of a clown act; Ivo prefers to play guitar
+ * Doing de-novo sequencing on the hummingbird and houbara bustard
+
+#### ONT History
+
+ * ONT has actually been around since 2008, and collaborated with Ivo Gut at that time
+  * Ivo got a ball of dirt as a prize
+ * Ivo helped in the development of structures to do de-novo assemblies
+  * Fosmid-pooled sequencing for a complex genome
+  * Used to take a whole lot of complicated preps and bring it all together
+  * Required some complicated manoevering and sequencing
+  * Has gone on to throw every technology at it
+ * As time when on, Ivo got more and more confident about nanopore
+ * At some time, just took DNA and put it into nanopores
+
+#### Houbara bustard
+ * Endangered species: lives in the arid desert and is flightless
+  * Hunted using other birds (which prefer airplane travel)
+
+#### Hummingbird
+ * Part of the genome 10k project, which turned into the vertebrate genome project
+ * Has been sequenced using everything except nanopores
+ * Got a lot of help from ONT for sequencing this bird
+ * Generated about 20X coverage
+ * Taking only Nanopore reads, got an N50 of 2.7Mb
+  * Compared to PacBio, which was 5.37Mb N50 (but about 3 times more data)
+ * Used a Canu assembly combined with Pilon
+
+#### Houbara bustard
+ * Did phenol chloroform extraction
+ * 10X coverage by nanopore, together with Illumina sequencing
+ * Got scaffold N50 of 5Mb
+ * Last night, an additional 3 flow cells were mapped on top
+ * N50 of 8Mb, with 181 contigs of over 1Mb
+
+#### The hummingbird now
+ * Re-exttracted DNA, got tissue shipped to Simon Mayes
+ * As a pilot, Simon got some duck tissue for sequencing
+ * Very optimistic that it can be done with long reads
+ * With the MinION, there's no more difference between scaffolds and contigs
 
 ### Plenary Panel -- Christiaan Henkel
 
