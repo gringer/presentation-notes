@@ -314,6 +314,70 @@ Presentation notes on London Calling, written by David Eccles.
 
 ## Day 2 (May fhe Fifth)
 
+### Plenary Panel -- Raymond Hulzink, KeyGene
+
+#### Background
+ * Wet lab biologist
+ * Started in 2014 with the MinION
+ * In 2016, started doing serious MinION sequencing
+ * In 2017, started sequencing the melon genome, and some BAC clones
+ * Recently obtained the PromethION, have done a lambda trial
+ * Will use VolTRAX for plant genomic DNA
+
+#### Plant / crop genomes
+ * Large, usually polyploid
+ * Long reads should resolve the genome complexity
+  * As read length is increased, contig length increases
+ * Plant cells are challenging
+  * Very rigid cell wall, a bit in contradiction to what needs to be done
+  * Have lots of metabolites, can damage DNA or reduce the efficiency of sequencing
+  * Have chloroplasts and mitochondria
+ * DNA isolation has no generic protocol; every plant is different
+ * Understanding DNA quality is important
+  * Can degrade over time
+  * Comparison of fresh sample vs. ultra-pure sample, no difference in high-quality reads regardless of the isolation method or storage
+  * QC changes when looking at reads longer than 50kb
+  
+
+### Plenary Panel -- Ivo Gut
+
+### Plenary Panel -- Christiaan Henkel
+
+#### Genomes that have not been previously sequenced
+ * Many amphibians and plants with extremely large genomes
+ * True long-read sequencing
+  * If 1Mb is the length of the shard, then the genome is the length of the sun and back
+  * Get unique bits in a sea of repetitive content
+ * Lightweight assembly
+  * Assume perfect long reads
+  * Just compare the ends, then assemble the genome
+  * Doesn't work for repetitive regions at the end
+  * So... find unique regions
+
+#### Sequencing the eel
+ * Want to know why they are critically endangered
+ * Did an assembly: 860Mbp assembly, 2366 scaffolds with 1.2Mbp N50
+ * Corrected with Pilon
+ * Tried to compare against an older Illumina-based draft
+  * Lots of tiny scaffolds unmapped
+  * Some discontinuities, nanopore data almost always compares favourably
+
+#### Tulip assembly with Tulip
+ * Library assembly method called Tulip
+ * Tulip production is easy, but tulip breeding is not
+  * Reading a single chromosome would take a month on nanopore [serially-sequenced]
+  * It is hoped that the PromethION will be good enough
+ * Pilot with one MinION flow cell for sequencing
+  * Surprisingly, the tulip genome is not very repetitive at all
+  * Assembly should work well with the lightweight method
+
+### Plenary Panel Questions
+
+* Pilon polishing is a stop-gap measure
+* Using other technologies (e.g. 10X, dovetail)... looking at that, but Ivo prefers using as few technologies as possible
+* Data analysis -- No best practise for de-novo assembly
+ * A few very smart people out there looking at different things
+
 ### Kazuharu Arakawa
 
 #### Starting with the very basics
