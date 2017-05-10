@@ -7,15 +7,16 @@ Presentation notes on London Calling, written by David Eccles.
 ### Lightning Talk -- David Eccles
 
 #### Sequencing a parasite genome
+
  * A long history of sequencing, started doing his own prep with R9 kit
  * Runs in October / November last year were bad
-  * ONT offered to do the sequencing for them
+   * ONT offered to do the sequencing for them
  * Five sequencing runs, all better than 20 previous runs at institute
  * One run amplified from a single worm
-  * Metagenomic profile from a 35,000-read subset
+   * Metagenomic profile from a 35,000-read subset
  * One run had a very long read length "hump"
-  * Sonication + Tip20 extraction
-  * Run N50 was better than current reference genome
+   * Sonication + Tip20 extraction
+   * Run N50 was better than current reference genome
  * Poster talks about assembly discoveries
 
 ### Clive Brown
@@ -86,7 +87,7 @@ Presentation notes on London Calling, written by David Eccles.
  * Will have Run Until and Read Until
  * People are licensed to use the GridION for commercial use
  * Can alternatively use five MinIONs, with laptops, software, etc.
-  * Process is all automated on the GridION
+   * Process is all automated on the GridION
  * Box can do real-time online basecalling
 
 ##### FPGAs
@@ -100,7 +101,7 @@ Presentation notes on London Calling, written by David Eccles.
 
  * ONT doesn't like the idea of how people pay for things
  * Preferred model is consumable only; almost Pay-As-You-Go, with contracted minimum
-  * This has been the most popular model
+   * This has been the most popular model
 
 ##### Manufacturing
 
@@ -115,33 +116,33 @@ Presentation notes on London Calling, written by David Eccles.
  * Designed 3 years ago, everything is completely new
  * Was designed to take on Illumina
  * In principle, will generate more data than a NovaSeq
-  * Head room is so much that even if NovaSeq is brought forward, will still be competitive
+   * Head room is so much that even if NovaSeq is brought forward, will still be competitive
  * Have 12-14 boxes out now, produces a ton of data
-  * **Bulk purchase cost of flow cells is about $600**
-  * Just sit tight
+   * **Bulk purchase cost of flow cells is about $600**
+   * Just sit tight
  * Can de-batch the entire workflow
-  * e.g. 50 samples on a Wednesday, one sample the next day; more real time and less batched
+   * e.g. 50 samples on a Wednesday, one sample the next day; more real time and less batched
  * PromethION is licensed as fee-for-service
  * Flow cell has a different layout
-  * A few issues remain, but nothing that hasn't been seen before with the MinION
-  * Even with issues, getting 22 Gb in 22 hours [DE: I recall there was a '23' somewhere]
-   * Active unblock is not yet fixed on the PromethION
-   * Flow cell run time has been increased to 4 days
-   * **Will also do a 4-way MUX (max 10,400 wells)**
+   * A few issues remain, but nothing that hasn't been seen before with the MinION
+   * Even with issues, getting 22 Gb in 22 hours [DE: I recall there was a '23' somewhere]
+    * Active unblock is not yet fixed on the PromethION
+    * Flow cell run time has been increased to 4 days
+    * **Will also do a 4-way MUX (max 10,400 wells)**
  * Even if just using similar output to a MinION, is still better than NovaSeq
 
 #### PromethION Processing
 
  * Increased speed of sequencing
-  * Internally have a run at 1,000 bases per second
+   * Internally have a run at 1,000 bases per second
  * Couldn't fit processing into the original design
  * Solution is to make as separate computer
-  * Will eventually shrink by about 1/3
+   * Will eventually shrink by about 1/3
  * Composed mostly of FPGAs, will allow complete base call in real time
  * Lower module will be a network switch
  * Inside is a server with a skin
  * FPGAs with neural networks
-  * Loads of them out and configured
+   * Loads of them out and configured
  * Steady incremental improvement
 
 #### PromethION evolution
@@ -153,21 +154,21 @@ Presentation notes on London Calling, written by David Eccles.
  * Customers are getting pretty good yields
  * Should be able to get 20 gigabases per day, but more realistically 6 or 7
  * Someone got 16 gigabases [one run], Clive wishes they would tweet that run
-  * 16 gigabases is a realistic expectation
-  * **New chemistry coming which will increase that yield by 20-30%**
+   * 16 gigabases is a realistic expectation
+   * **New chemistry coming which will increase that yield by 20-30%**
 
 #### MinKNOW
  * Improving rapidly
  * Should be able to wash out flow cell sample, fix sample prep, and move on
  * Want to get rid of the priming step
-  * Just load the flow cell without priming
-  * This flow cell should be ready [DE: i.e. almost shippable]
+   * Just load the flow cell without priming
+   * This flow cell should be ready [DE: i.e. almost shippable]
  * Working on recommendation list
  * Radically simplifying the software
-  * A team is working on redesigning the user experience
-  * People should just know how to run MinKNOW
-  * After a time, all base calling improvements will be in MinKNOW
-  * Process should be very straightforward
+   * A team is working on redesigning the user experience
+   * People should just know how to run MinKNOW
+   * After a time, all base calling improvements will be in MinKNOW
+   * Process should be very straightforward
 
 #### VolTRAX
  * Moving along pretty well
@@ -186,7 +187,7 @@ Presentation notes on London Calling, written by David Eccles.
 #### Algorithm updates
  * 1D will improve
  * 2D idea: template + hairpin + complement
-  * need to replace with something new
+   * need to replace with something new
  * 1D²; make the second strand hang around for longer so second strand follows through
  * 96% modal accuracy, limited by how data is combined
  * Should get to 1% error
@@ -198,9 +199,9 @@ Presentation notes on London Calling, written by David Eccles.
  * Coming 8th May
  * All ready to rock
  * 2D can now go into the dustbin of history
-  * Nanopore killed 2D today (please tweet)
+   * Nanopore killed 2D today (please tweet)
  * Very little is different between R9.4 and R9.5
-  * What is different should be fixable in software
+   * What is different should be fixable in software
 
 #### Homopolymers
  * If taken out, now getting pretty good numbers
@@ -212,15 +213,15 @@ Presentation notes on London Calling, written by David Eccles.
  * End up with detritus of error
  * **Should get to 99.9% by the end of this year (possibly this summer)**
  * Still lots of unmodelled signals
-  * e.g. there is a fungus that puts sugars on DNA
-  * People here have shown that things are visible in the signal
+   * e.g. there is a fungus that puts sugars on DNA
+   * People here have shown that things are visible in the signal
 
 #### New pores
  * Also working on new pores; patent has just been published on this
-  * In the future, will now never replace pores, just migrate pores
+   * In the future, will now never replace pores, just migrate pores
  * **Updated pore has two times read-ahead**
-  * should be able to span 30bp homopolymers
-  * may have new pore by the end of summer
+   * should be able to span 30bp homopolymers
+   * may have new pore by the end of summer
 
 #### Raw Calling
  * A lot of work done on this
@@ -232,8 +233,8 @@ Presentation notes on London Calling, written by David Eccles.
 
 #### Removing cold-chain system
  * Can now store and ship new packaging in wool
-  * Creating jobs for sheep
-  * **A reasonable user will be able to knit their own clothes using nanopore packaging**
+   * Creating jobs for sheep
+   * **A reasonable user will be able to knit their own clothes using nanopore packaging**
  * A lot of work being done to make a lyophilised reagent system
  * Performance is comparable to conventional wet reagents
  * 1D² version will be available shortly
@@ -257,7 +258,7 @@ Presentation notes on London Calling, written by David Eccles.
  * Device will eventually be able to work on its own (with connected power supply)
  * Should be out by the end of summer
  * FPGA currently Intel Arria 10, runs at 10Mb per second
-  * Next version will be 7Mb per second
+   * Next version will be 7Mb per second
  * Theme is portability: want to make things as easy as possible
 
 #### Flongle
@@ -266,12 +267,12 @@ Presentation notes on London Calling, written by David Eccles.
  * Cheaper flow cell snaps into adapter
  * Fewer channels, higher volume [DE: presumably production volume], cheaper price
  * The substrate device... the MinION they should have made
-  * Very significant for ONT
-  * Should be out by the end of the year
+   * Very significant for ONT
+   * Should be out by the end of the year
  * Previously had gel-gel interface
-  * **Can now get metal/metal interface**
-  * have prototype chips and membranes at the other end of the scale
-  * was actually a prototype used for the SmidgION
+   * **Can now get metal/metal interface**
+   * have prototype chips and membranes at the other end of the scale
+   * was actually a prototype used for the SmidgION
 
 #### SmidgION
  * Won't be around this year, but it will come
@@ -281,10 +282,10 @@ Presentation notes on London Calling, written by David Eccles.
  * Looking to develop this
  * There are a lot of things that can be done with nanopores
  * Blob counting: sequencing of site-specific things
-  * Let sequences whizz through the pore
-  * Blob does the counting
-  * Very rapid yes/no sequencing
-  * Getting to very rapid MinION sequencing
+   * Let sequences whizz through the pore
+   * Blob does the counting
+   * Very rapid yes/no sequencing
+   * Getting to very rapid MinION sequencing
 
 #### Solid-state nanopores
  * Will be solid-state Flongle; will definitely [DE: also] be a blob counter
@@ -296,15 +297,15 @@ Presentation notes on London Calling, written by David Eccles.
  * Can use the same trick for detection as well
  * Have pretty good working implementation of Cas9 target selection
  * Multiplexing
-  * Very cost-effective for small region for thousands of samples
-  * "Cas Me If You Can"
-  * Custom Cas9 provided by ONT
-  * Also planning to make pre-made versions
+   * Very cost-effective for small region for thousands of samples
+   * "Cas Me If You Can"
+   * Custom Cas9 provided by ONT
+   * Also planning to make pre-made versions
 
 #### Dates
  * May
-  * MinKNOW 1D² 9.5
-  * 8th: new flow cell
+   * MinKNOW 1D² 9.5
+   * 8th: new flow cell
  * June 17th (Clive Brown's birthday): raw basecaller
  * June 30th: new cDNA kits
  * July: new ambient shipping methods
@@ -319,12 +320,12 @@ Presentation notes on London Calling, written by David Eccles.
  * Have been teaching neural networks to look at raw signal to decide what species it is
  * Want to go from squiggle
  * There are cases that don't require base calling
-  * **A sequencer that doesn't do base calling -- Clive's pet project for the rest of the year**
+   * **A sequencer that doesn't do base calling -- Clive's pet project for the rest of the year**
 
 #### Questions
  * Gordon's ambition is to put the Flongle in as a diagnostic device
  * Consensus reading errors: just a matter of knocking downm the obvious problems
-  * If ONT runs into non-software problems, just need to change the chemistry
+   * If ONT runs into non-software problems, just need to change the chemistry
 
 ## Day 2 (May fhe Fifth)
 
@@ -333,18 +334,18 @@ Presentation notes on London Calling, written by David Eccles.
 #### Human Gut microbiome
  * Large ongoing project
  * Seven questions
-  * Host/microbial factorss
-  * Evolution of resistome
-  * Novel plasmids
-  * Strain dynamics
+   * Host/microbial factorss
+   * Evolution of resistome
+   * Novel plasmids
+   * Strain dynamics
  * Begin with a pilot project, using long reads for metagenomic assembly
  * Then use real clinical samples
-  * The aim is to maintain the diversity of the community
-  * Many reads are longer than 5kb
+   * The aim is to maintain the diversity of the community
+   * Many reads are longer than 5kb
  * Carried out an analysis on a single patient
-  * Significant enrichment of *K. pneumoniae* with different abundances
-  * N50s of hundreds of kilobases
-  * Were able to identify extended-spectrum lactamase gene
+   * Significant enrichment of *K. pneumoniae* with different abundances
+   * N50s of hundreds of kilobases
+   * Were able to identify extended-spectrum lactamase gene
  * Observe plasmid dynamics and rearrangements in plasmids
 
 ### Lightning Talk -- Michael Boemo
@@ -353,20 +354,20 @@ Presentation notes on London Calling, written by David Eccles.
  * Use analogues to look at DNA replication
  * Pulse of thymidine analogues, then can work out where the origins of replication are in the genome
  * How well does it work?
-  * Analogues make quite a difference in the signal
-  * Working pretty well in synthetic substrates
+   * Analogues make quite a difference in the signal
+   * Working pretty well in synthetic substrates
  * Don't care about the exact base, just interested in the region
 
 ### Lightning Talk -- Celine Bigot
 
 #### Free Pathogen Identification
  * NGS enables the detection of microbial species without a-priori models
-  * MiSeq, MinION, PGM were all tested
+   * MiSeq, MinION, PGM were all tested
  * Working on own reference material, plus the Zymo community standard, plus other types of samples
-  * CNRGH standard has 10 bacteria, one fungal, and one other
-  * Standard is still in progress
+   * CNRGH standard has 10 bacteria, one fungal, and one other
+   * Standard is still in progress
  * Interesting preliminary analysis
-  * Has done a WIMP analysis
+   * Has done a WIMP analysis
  * Based on processing time, the MinION and MiSeq are preferred to the PGM
 
 ### Lightning Talk -- Scott Gigante
@@ -388,7 +389,7 @@ Presentation notes on London Calling, written by David Eccles.
 #### Identification of HLA Variants by cDNA sequencing
  * Genes are highly polymorphic
  * Interesting to look at the DNA and RNA
-  * RNA has alternative splicing
+   * RNA has alternative splicing
  * Used GMap, which can insert introns (splicing-aware mapper)
  * Has made a software platform, an alternative to laboratory techniques
  * Aligned boundaries mapped to the reference genome
@@ -400,7 +401,7 @@ Presentation notes on London Calling, written by David Eccles.
  * One of the most sold / produced fruit around the workd, 100 million tonnes
  * Most edible species of banana are from two hybrids
  * Sequenced and assembled two genomes, looking at one now
-  * Long fragments were selected with the BluePippin
+   * Long fragments were selected with the BluePippin
  * Ran four R9.4 runs, generating 22 gigabases of reads
  * Peak [modal] read length was between 25-30kb
  * Read correction with Canu, processed into SmartDenovo
@@ -414,12 +415,12 @@ Presentation notes on London Calling, written by David Eccles.
  * Diagnosis at the moment is mostly by PCR
  * Looking for a rapid, untargeted sequencing approach
  * Can untargeted MinION do this?
-  * 4 cultures, each infected, pooled, and nuclease added to remove host DNA
-  * Non-exised nucleic acid goes into the RAD kit
-  * Got 7,000 reads in the pass folder
-  * BLAST top hit took 9 hours
-  * Local viral sequence took about 10s
-  * 99.6% of reads were correctly identified
+   * 4 cultures, each infected, pooled, and nuclease added to remove host DNA
+   * Non-exised nucleic acid goes into the RAD kit
+   * Got 7,000 reads in the pass folder
+   * BLAST top hit took 9 hours
+   * Local viral sequence took about 10s
+   * 99.6% of reads were correctly identified
 
 ### Lightning Talk -- Libby Snell (ONT)
 
@@ -430,12 +431,12 @@ Presentation notes on London Calling, written by David Eccles.
  * Not possible using any other technology
  * Up and coming... ONT wants to get rid of cDNA; it's only there while they're stabilising the technology
  * Ideally want to move to a 30-minute rapid preparation
-  * Ligate, wash, and load
+   * Ligate, wash, and load
  * Potentially allows for a lower input amount
  * Tested with quantitative samples: Ambion ERCC, Lexogen spike-in (SIRVs)
  * Single-stranded prep works, and a 2D prep works (with RNA stabilised by cDNA)
  * Getting full-length transcript coverage
-  * Currently output is about 70% of what it should be, probably due to blocking
+   * Currently output is about 70% of what it should be, probably due to blocking
  
 
 ### Direct RNA Breakout -- John Tyson
@@ -467,7 +468,7 @@ chimeric reads]
 #### Full-length transcripts
  * More degredation in the RNA run
  * Looking at RNA alignments, get degredation in the UTR
-  * Might be aligner clipping
+   * Might be aligner clipping
  * Other end, more exon dropout, need to look at the soft clips
 
 #### Abundance comparison
@@ -490,34 +491,34 @@ chimeric reads]
 #### Single-cell RNASeq
  * Using nanopore technology to improve
  * Human cell atlas is now picking up pace
-  * Looking at the types of every human cell
-  * Illumina is good at defining gene expression of single cells
+   * Looking at the types of every human cell
+   * Illumina is good at defining gene expression of single cells
  * Most single cell library preps involve full-length cDNA as an intermediate step
 
 #### B-cells
  * Lab's primary interest is in B-cells
  * Would love to do direct RNA seq, but cells contain about 10 femtograms of RNA
-  * A couple of orders of magnitude less than what is needed
+   * A couple of orders of magnitude less than what is needed
  * Was waiting [a *long* time] for Illumina run results to get back
-  * Why not put cDNA into a MinION flow cell?
-  * Designed indexes by randomly generating 60bp random sequences
+   * Why not put cDNA into a MinION flow cell?
+   * Designed indexes by randomly generating 60bp random sequences
  * Trying to quantify gene expression, ended up breaking tools
  * Looked at the overlap between Illumina and Nanopore expression
-  * Got fairly good correlation, r = 0.9 approx.
-  * Nanopore doesn't seem to have a length bias
-  * Cutting is needed for short transcripts, but can't be done
-  * [Possible that the inability to cut small RNA molecules means they are under-represented in Illumina reads]
+   * Got fairly good correlation, r = 0.9 approx.
+   * Nanopore doesn't seem to have a length bias
+   * Cutting is needed for short transcripts, but can't be done
+   * [Possible that the inability to cut small RNA molecules means they are under-represented in Illumina reads]
  * Used SIRV / synthetic spike-in molecules as a control
-  * Made 10fg of DNA, trivially easy and fairly quantitative
-  * Wanted to get by without reference genome annotation
+   * Made 10fg of DNA, trivially easy and fairly quantitative
+   * Wanted to get by without reference genome annotation
 
 #### Pipeline -- MandalorION
  * Only wrote this because it wasn't available elsewhere
  * Picked up stuff [transcript isoforms] that wasn't in the reference sequence
  * Sort reads based on the distribution, create [model] isoforms
  * Get approximately linear correlation (r=0.97) when comparing reference-free versus reference-based mapping
-  * CD20 gene -- found an exon that wasn't in the reference assembly
-  * Looked at assembly by Trinity, found assemblies that were just really bad
+   * CD20 gene -- found an exon that wasn't in the reference assembly
+   * Looked at assembly by Trinity, found assemblies that were just really bad
  * Working on systematic way for naming isoforms [odd that this doesn't exist already]
 
 ### Direct RNA Breakout -- Andrew Smith
@@ -527,8 +528,8 @@ chimeric reads]
  * Getting to 16s RNA levels from gDNA would need 13-14 rounds of PCR
  * If we could get a hold of 16s, woud be able to do a lot of good things
  * Needed to customise the ONT RNA kit a bit
-  * Kit adapter was modified to be complementary to the 3' end of 16s
-  * This is a very well-conserved gene at the 3' end
+   * Kit adapter was modified to be complementary to the 3' end of 16s
+   * This is a very well-conserved gene at the 3' end
 
 #### Proof of principle
  * Working with highly-purified 16s
@@ -542,38 +543,38 @@ chimeric reads]
  * Hump at a particular region
  * Very consistent base miscall
  * Compared MRE600 *E. coli* with RsmG-delta
-  * Base call was different
+   * Base call was different
  * Nanoraw showed a modified ribonucleotide in the 16s gene
-  * This is a mechanism by which some microbes can defend against other microbes
+   * This is a mechanism by which some microbes can defend against other microbes
  * Wanted to show that this could be detected at other regions
-  * Pronounced low-amplitude signal from the modified strain
+   * Pronounced low-amplitude signal from the modified strain
  * Also found pseudouridine modification
-  * Very exciting to be able to detect this
+   * Very exciting to be able to detect this
  * Ion current change affects current at adjacent regions
-  * Probably due to 5-6bp nucleotide window from which the current is sampled
+   * Probably due to 5-6bp nucleotide window from which the current is sampled
 
 #### Diagnostic tool
  * Titration with lower and lower amounts of 16s
  * Could still see reads even at 5pg
  * Depending on the amount added, could find result in 20s
-  * Basically the earliest opportunity for a read sequence to appear was when the first 16s reads came through
+   * Basically the earliest opportunity for a read sequence to appear was when the first 16s reads came through
 
 ### Direct RNA Breakout -- General Discussion and Questions
 
  * Should we stop calling RNASeq [the stuff done on other systems] RNASeq?
-  * We are fighting an uphill battle
-  * The community will eventually come to a consensus sequence
+   * We are fighting an uphill battle
+   * The community will eventually come to a consensus sequence
  * Neither GMap nor BLAT use a [transcript] reference; they don't rely on genome annotations
  * Just doing cDNA is losing a lot of information
  * Read-until could get rid of ribosomal sequences
  * Direct RNA with a polyA primer is the only thing that can get the correct length of the polyA sequence
-  * No need to do VT23, can just use T23
-  * Can tell mispriming events when they happen
-  * [DE: Why not use a polyT primer with a double-stranded component?]
-  * SIRVs polyA tail is [always] 30bp
+   * No need to do VT23, can just use T23
+   * Can tell mispriming events when they happen
+   * [DE: Why not use a polyT primer with a double-stranded component?]
+   * SIRVs polyA tail is [always] 30bp
  * mRNA only makes up 15% of total RNA sequences
-  * There is lots of rRNA
-  * Also a whole number of small RNA molecules
+   * There is lots of rRNA
+   * Also a whole number of small RNA molecules
 
 ### Plenary Panel -- Raymond Hulzink, KeyGene
 
@@ -588,16 +589,16 @@ chimeric reads]
 #### Plant / crop genomes
  * Large, usually polyploid
  * Long reads should resolve the genome complexity
-  * As read length is increased, contig length increases
+   * As read length is increased, contig length increases
  * Plant cells are challenging
-  * Very rigid cell wall, a bit in contradiction to what needs to be done
-  * Have lots of metabolites, can damage DNA or reduce the efficiency of sequencing
-  * Have chloroplasts and mitochondria
+   * Very rigid cell wall, a bit in contradiction to what needs to be done
+   * Have lots of metabolites, can damage DNA or reduce the efficiency of sequencing
+   * Have chloroplasts and mitochondria
  * DNA isolation has no generic protocol; every plant is different
  * Understanding DNA quality is important
-  * Can degrade over time
-  * Comparison of fresh sample vs. ultra-pure sample, no difference in high-quality reads regardless of the isolation method or storage
-  * QC changes when looking at reads longer than 50kb
+   * Can degrade over time
+   * Comparison of fresh sample vs. ultra-pure sample, no difference in high-quality reads regardless of the isolation method or storage
+   * QC changes when looking at reads longer than 50kb
 
 #### Melon sequencing
  * Decided to use DNA that was less than one month old
@@ -622,18 +623,18 @@ chimeric reads]
 #### ONT History
 
  * ONT has actually been around since 2008, and collaborated with Ivo Gut at that time
-  * Ivo got a ball of dirt as a prize
+   * Ivo got a ball of dirt as a prize
  * Ivo helped in the development of structures to do de-novo assemblies
-  * Fosmid-pooled sequencing for a complex genome
-  * Used to take a whole lot of complicated preps and bring it all together
-  * Required some complicated manoevering and sequencing
-  * Has gone on to throw every technology at it
+   * Fosmid-pooled sequencing for a complex genome
+   * Used to take a whole lot of complicated preps and bring it all together
+   * Required some complicated manoevering and sequencing
+   * Has gone on to throw every technology at it
  * As time when on, Ivo got more and more confident about nanopore
  * At some time, just took DNA and put it into nanopores
 
 #### Houbara bustard
  * Endangered species: lives in the arid desert and is flightless
-  * Hunted using other birds (which prefer airplane travel)
+   * Hunted using other birds (which prefer airplane travel)
 
 #### Hummingbird
  * Part of the genome 10k project, which turned into the vertebrate genome project
@@ -641,7 +642,7 @@ chimeric reads]
  * Got a lot of help from ONT for sequencing this bird
  * Generated about 20X coverage
  * Taking only Nanopore reads, got an N50 of 2.7Mb
-  * Compared to PacBio, which was 5.37Mb N50 (but about 3 times more data)
+   * Compared to PacBio, which was 5.37Mb N50 (but about 3 times more data)
  * Used a Canu assembly combined with Pilon
 
 #### Houbara bustard
@@ -662,30 +663,30 @@ chimeric reads]
 #### Genomes that have not been previously sequenced
  * Many amphibians and plants with extremely large genomes
  * True long-read sequencing
-  * If 1Mb is the length of the shard, then the genome is the length of the sun and back
-  * Get unique bits in a sea of repetitive content
+   * If 1Mb is the length of the shard, then the genome is the length of the sun and back
+   * Get unique bits in a sea of repetitive content
  * Lightweight assembly
-  * Assume perfect long reads
-  * Just compare the ends, then assemble the genome
-  * Doesn't work for repetitive regions at the end
-  * So... find unique regions
+   * Assume perfect long reads
+   * Just compare the ends, then assemble the genome
+   * Doesn't work for repetitive regions at the end
+   * So... find unique regions
 
 #### Sequencing the eel
  * Want to know why they are critically endangered
  * Did an assembly: 860Mbp assembly, 2366 scaffolds with 1.2Mbp N50
  * Corrected with Pilon
  * Tried to compare against an older Illumina-based draft
-  * Lots of tiny scaffolds unmapped
-  * Some discontinuities, nanopore data almost always compares favourably
+   * Lots of tiny scaffolds unmapped
+   * Some discontinuities, nanopore data almost always compares favourably
 
 #### Tulip assembly with Tulip
  * Library assembly method called Tulip
  * Tulip production is easy, but tulip breeding is not
-  * Reading a single chromosome would take a month on nanopore [serially-sequenced]
-  * It is hoped that the PromethION will be good enough
+   * Reading a single chromosome would take a month on nanopore [serially-sequenced]
+   * It is hoped that the PromethION will be good enough
  * Pilot with one MinION flow cell for sequencing
-  * Surprisingly, the tulip genome is not very repetitive at all
-  * Assembly should work well with the lightweight method
+   * Surprisingly, the tulip genome is not very repetitive at all
+   * Assembly should work well with the lightweight method
 
 ### Plenary Panel Questions
 
@@ -699,24 +700,24 @@ chimeric reads]
 #### Starting with the very basics
  * needed to do sequencing, so was investigating Nanopore
  * Looked at bacterial draft genome
-  * Used MinION reads to finish genomes
-  * "how low can you go?"
-  * In under 1hr, was able to complete a full genome with one 4.4Mb circular chromosome and one 44kb plasmid
+   * Used MinION reads to finish genomes
+   * "how low can you go?"
+   * In under 1hr, was able to complete a full genome with one 4.4Mb circular chromosome and one 44kb plasmid
 
 #### Spider silk
  * 4 times stronger than steel
  * in nature, about 10µm in diameter
  * More elastic than nylon
  * it's weird to have both high strength and high elasticity
-  * has the highest "toughness" [combination of strength and elasticity] among all fibres
-  * Made from proteins, so it's re-usable
+   * has the highest "toughness" [combination of strength and elasticity] among all fibres
+   * Made from proteins, so it's re-usable
  * If spinning a web with 1cm-diameter silk, it would be possible to catch a plane
-  * If that same web were made of steel, the plane would crash and break into pieces
-  * If that same web were made of rubber, the plane would break through
+   * If that same web were made of steel, the plane would crash and break into pieces
+   * If that same web were made of rubber, the plane would break through
  * Did an experiment comparing spider silk to carbon fibre and polyester
-  * Spider silk was able to handle more weight than both of them
-  * Carbon fibre broke fairly quickly
-  * Polyester stretched too much and broke
+   * Spider silk was able to handle more weight than both of them
+   * Carbon fibre broke fairly quickly
+   * Polyester stretched too much and broke
 
 #### Spiber
  * Company set up by former institute members
@@ -729,11 +730,11 @@ chimeric reads]
  * All silk genes are monophylogenetic (from the same original gene)
  * With enough data about the genetics and properties, can work out how amino acid changes affect the properties
  * Will sequence 1,000 spiders (for funding purposes)
-  * Has already done a lot of those [? over 900]
+   * Has already done a lot of those [? over 900]
  * Spider genomes are quite long
  * Don't really know what components are in the genes
-  * One gene has periodic polyalanines
-  * Can only find 10 spider silk genes in GenBank
+   * One gene has periodic polyalanines
+   * Can only find 10 spider silk genes in GenBank
 
 #### MinION categorisation of genes
  * Can't do PCR because of repeats
@@ -741,15 +742,15 @@ chimeric reads]
  * Did whole-genome sequencing at 2-3X coverage, got N50 of about 10kb
  * The challenge is to find entire components of spider silk
  * Protein fractionation yielded 3 bands that were very specific to drag-line silk
-  * Did gland-specific transcriptome
-  * Looked at top 50 most expressed genes
-  * Novel genes were found that corresponded to the gland in the spider
-  * But first, they needed to clone the genes
+   * Did gland-specific transcriptome
+   * Looked at top 50 most expressed genes
+   * Novel genes were found that corresponded to the gland in the spider
+   * But first, they needed to clone the genes
  * Tried cloning, sorted out and cloned two genes
  * The other two genes were actually different components of the same gene
-  * sequenced 2.4kb
-  * use MiNION to finish it
-  * no conserved N-terminal sequence
+   * sequenced 2.4kb
+   * use MiNION to finish it
+   * no conserved N-terminal sequence
 
 #### Questions
  * Only saw repeat elements within spider silk genes
