@@ -458,7 +458,7 @@ x * Works for IDH mutant and medulloblastoma
    * The seminal fluid of a survivor was infected
    * The virus was "frozen in time"
  * [Video / animation: 1600 Ebola Virus transmissions, representing 5% of all outbreaks, 30,000 cases, 10,000 deaths]
-  * 10.1038/nature22040
+  * [10.1038/nature22040](http://dx.doi.org/10.1038/nature22040)
   * Many opportunities to stop Ebola from moving
   * MinION/NickSeq wasn't deployed until April 2015
   * Is there a case for getting sequencing done early?
