@@ -19,6 +19,50 @@ Presentation notes on London Calling, written by David Eccles.
    * Run N50 was better than current reference genome
  * Poster talks about assembly discoveries
 
+### Philipp Euskirchen
+
+[DE: starting to feel jet lag problems]
+
+#### [History of brain tumour diagnosis]
+
+#### Diagnosis
+ * Tumours can have very different morphologies but be molecularly similar
+ * Diagnosis is preferred if it leads to a prognosis
+   * e.g. identification of an H1 mutation; a 1p or 19q codeletion strongly correlated with prognosis
+   * For subgroups of medulloblastoma, prognosis depends on the subtype
+ * How can diagnosis be implemented?
+   * There are four subtypes of medulloblastoma based on their transcriptomic and methylation classification
+   * A lot of different machines and protocols
+ * Two paradigms
+   * Low-pass whole-genome sequencing, producing results within a day
+   * Deep amplicon sequencing for point mutations and GC-rich regions
+
+#### Copy-number profiling
+ * DNA with rapid kit and sequencing
+ * Used out-of-the-box tools from the supermarket
+ * Read numbers are not gigantic, but could still generate decent profiles within a day
+ * Visually explored the EGFR region on chromosome 7
+   * Saw focal amplication
+   * Was able to identify split reads at both ends
+   * Remapped to a synthetic sequence for collapsed reads
+   * Confirmed by sanger sequencing
+
+#### Methylation sequencing
+ * Can use the same reads as used for copy-number profiling
+ * Compared with Illumina 450k chip
+ * Wanted to know if this could possibly work for nanopore
+   * Classifier error changes things; don't know in advance what CpG sites will be seen
+   * Compared with Illumina, methylation profile has a nice correlation
+
+#### Pan-cancer classification
+ * Classification from a while different method
+ * Works for IDH mutant and medulloblastoma
+ * What works in brain tumours should have benefit for other cancers
+
+#### Real-time read depth monitoring
+ * 10-20 minutes until a region is 1000X-covered, including a GC-rich region
+ * Results mostly in line with Illumina data
+
 ### Clive Brown
 
 #### Novel statements selected by David Eccles
