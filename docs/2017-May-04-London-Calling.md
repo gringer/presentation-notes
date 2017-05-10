@@ -56,12 +56,24 @@ Presentation notes on London Calling, written by David Eccles.
 
 #### Pan-cancer classification
  * Classification from a while different method
- * Works for IDH mutant and medulloblastoma
+x * Works for IDH mutant and medulloblastoma
  * What works in brain tumours should have benefit for other cancers
 
 #### Real-time read depth monitoring
  * 10-20 minutes until a region is 1000X-covered, including a GC-rich region
  * Results mostly in line with Illumina data
+
+## Breakout 3 Discussion
+ * Nanopolish doesn't work so well with the new version of albacore
+ * ONT wants to work to produce a better base caller, want to avoid needing nanopolish
+   * Don't want a base caller that introduces systematic error
+ * Damien has tried tracking virus with mouse samples, seen different diversity in different tissues
+   * With direct RNA sequencing, even with 10^6 to 10^7 copies per ml, sill gets swamped out by the host
+ * What is the optimum depth?
+   * Read length matters
+   * With good long reads, 20-30X is good enough
+ * For clinical use, need to be very sure about accuracy
+   * There are applications where read-until will be useful
 
 ### Clive Brown
 
@@ -372,6 +384,146 @@ Presentation notes on London Calling, written by David Eccles.
    * If ONT runs into non-software problems, just need to change the chemistry
 
 ## Day 2 (May fhe Fifth)
+
+### Gordon Sanghera
+
+#### Throughput
+ * Since shifting to the 9 series, there has been an exponential move to throughput [DE: it was exponential prior to that, but no one cared because it was exponentially low]
+ * A lot of issues will be application-specific
+ * 20 gigabases is the output of a 2-day flow cell, but ONT wants to move to 3 days
+ * Hope to get all customers to 15-20 gigabases
+ * No reason why the flow cells can't reach their theoretical maximum
+ * Sensor chip is designed to handle 1000 bases per second
+   * Might be able to adjust sequencing speed in the future for application-specific uses
+ * Is there an underlying single molecule optical[?] limit to accuracy?
+   * Accuracy doesn't seem to have a limit with nanopore
+   * 100% Accuracy is the target
+   * No fundamental reason why this is not achievable
+ * R9.5 is squeezing the last 10% out of the flow cells
+
+#### Marketing
+ * The challenge is getting the technology to market
+ * In 2017, we might be ready for prime time
+   * We are answering biological questions that other platforms cannot solve
+ * Innovating quickly: it is in our DNA
+   * ONT cannot rest on their laurels
+   * We are disruptive innovators
+
+#### Flongle
+ * This will be big
+ * Thinking about crossing the chasm into diagnostics [repeated multiple times]
+   * If you could, you would probably want to sequence the whole of HIV
+ * Flongle allows ONT to be applied
+   * Can be HIV or HepC
+   * Can delete what is not needed
+ * Will challenge PCR diagnostics, a tech that has been around for 25 years
+ * Next year, flongle will be available as a registered diagnostic device
+
+#### Disruption
+ * The challenge is to disrupt the diagnostic market [etc....]
+ * DNA information will disrupt everybody
+ * [video about student education; students having the opportunity to use the MinION]
+ * Children will say, "You didn't *know* that beef was actually Kobi beef, you just ate it?"
+
+### Nick Loman
+ * Setting expectation levels corretly for this talk: The answer is NO! [DE: referring to a statement about the suitability of the MinION in the title]
+
+#### Dr Seuss
+ * People with young kids use kids books for inspiration
+ * The MinION has sequenced almost everywhere
+   * On a boat
+   * With a goat
+   * On a plane
+   * On a train
+   * Down some holes
+   * At the poles
+   * In outer space
+   * At quite a pace
+ * One notable place where it hasn't sequenced; more aboout that later
+
+#### 2015
+ * Nick's last talk at London Calling was in May 2015
+ * Very excited, because they had done successful sequencing in New Guinea, with results back on a time scale of days
+ * One genome was sequenced per flow cell
+   * Generated sequence quickly enough to feed back to WTO
+   * By May, had sequenced 50% of Ebola cases in Guinea
+ * Really important findings came out of that ebola work
+   * Data needs to be shared as quickly and as ethically as is possible
+   * Could measure cross-border transmissions
+   * When a new case popped up, could identify if it was linked to other existing cases
+
+#### Ebola progression
+ * It was originally thought that Ebola was over by September / October, but a number of additional flare-ups happened
+   * Used MinION to identify one case
+   * The seminal fluid of a survivor was infected
+   * The virus was "frozen in time"
+ * [Video / animation: 1600 Ebola Virus transmissions, representing 5% of all outbreaks, 30,000 cases, 10,000 deaths]
+  * 10.1038/nature22040
+  * Many opportunities to stop Ebola from moving
+  * MinION/NickSeq wasn't deployed until April 2015
+  * Is there a case for getting sequencing done early?
+
+#### Zika Project
+ * Introduced last year
+  * Unbelievable arrogance in the grant application: claimed that they would sequence 750 genomes
+ * For epidemiology, see Oli Pybus' talk
+
+#### Concentration issues
+ * Zika was almost impossible to sequence using normal procedures
+  * Doesn't work with metagenomic techniques
+  * cT values for PCR of 34 to 36
+ * Pathogen enrichment challenges
+  * At the moment, 100ng of DNA is required for MinION sequencing
+  * Can be done by PCR, whole-genome amplification, or bait probes
+  * PCR-based approach represents a pragmatic, or easy way
+
+#### PCR Primer design
+ * Josh spent a couple of months working on sequencing
+ * Developed "Primal Scheme": an application to generate a multiplex panel for siling sequencing
+ * Can now sequence Zika, with reasonably complete genomes up to a cT of 36
+  * Some amplicons drop out more than others
+ * Now have everything in place to do this outbreak stuff in real time
+
+#### Yellow Fever
+ * Currently an outbreak in Brazil
+ * Process is much quicker this time
+   * Biggest hold-up was taking about a week for the university to process the primer order (actually not that bad)
+ * Josh and Nick didn't have to go this time
+   * Can now enable colleagues to do this
+   * Could do six genomes per flow cell, 1-4 million reads
+   * Yellow fever has a low cT, so easier to sequence
+ * Now have easy-to-install workloads
+
+#### Health Service Publicity
+ * Check out Nick above the escalators at Euston
+
+#### Working with high-yield MinION flow cells
+ * Mix rapid kits together, pull out single contigs
+ * Yield improvements make this stuff very feasible
+ * Someone should sequence inside whales
+ * There is a mapping from whale weight to read length
+ * Still haven't got a megabase read
+   * A flow cell is running outside, Nick has been checking during the conference
+   * Next improvement to be trialled: extracting *E. coli* from an agarose plug
+   * Have got read N50 up to 150kb
+   * Can get an entire *E. coli* genome in seven reads
+   * longest read so far is 886kb
+ * Could we trivially finish a genome?
+   * With a 30X dataset, could probably get human contig N50 to 50Mb
+
+#### Wish list
+ * All of Nick's wish list from 2015 is done, except for low-input
+
+#### NHS -- where sequencing is not done
+ * Sort it out and bring it to the UK
+ * Money is an issue
+ * Clinical microbiologists have been reluctant
+ * Physicians seem quite into it
+ * A lack of will; people just need to go and do in
+
+#### Questions / Answers
+ * Nick hasn't looked at why people are resistant
+ * Could do pathogen discovery and RNA at the same time
 
 ### Lightning Talk -- Niranjan Nagarajan
 
