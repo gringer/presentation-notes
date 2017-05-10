@@ -4,6 +4,20 @@ Presentation notes on London Calling, written by David Eccles.
 
 ## Day 1 (May the Fourth be with You)
 
+### Lightning Talk -- David Eccles
+
+#### Sequencing a parasite genome
+ * A long history of sequencing, started doing his own prep with R9 kit
+ * Runs in October / November last year were bad
+  * ONT offered to do the sequencing for them
+ * Five sequencing runs, all better than 20 previous runs at institute
+ * One run amplified from a single worm
+  * Metagenomic profile from a 35,000-read subset
+ * One run had a very long read length "hump"
+  * Sonication + Tip20 extraction
+  * Run N50 was better than current reference genome
+ * Poster talks about assembly discoveries
+
 ### Clive Brown
 
 #### Novel statements selected by David Eccles
@@ -313,6 +327,253 @@ Presentation notes on London Calling, written by David Eccles.
   * If ONT runs into non-software problems, just need to change the chemistry
 
 ## Day 2 (May fhe Fifth)
+
+### Lightning Talk -- Niranjan Nagarajan
+
+#### Human Gut microbiome
+ * Large ongoing project
+ * Seven questions
+  * Host/microbial factorss
+  * Evolution of resistome
+  * Novel plasmids
+  * Strain dynamics
+ * Begin with a pilot project, using long reads for metagenomic assembly
+ * Then use real clinical samples
+  * The aim is to maintain the diversity of the community
+  * Many reads are longer than 5kb
+ * Carried out an analysis on a single patient
+  * Significant enrichment of *K. pneumoniae* with different abundances
+  * N50s of hundreds of kilobases
+  * Were able to identify extended-spectrum lactamase gene
+ * Observe plasmid dynamics and rearrangements in plasmids
+
+### Lightning Talk -- Michael Boemo
+
+#### DNA base analogues
+ * Use analogues to look at DNA replication
+ * Pulse of thymidine analogues, then can work out where the origins of replication are in the genome
+ * How well does it work?
+  * Analogues make quite a difference in the signal
+  * Working pretty well in synthetic substrates
+ * Don't care about the exact base, just interested in the region
+
+### Lightning Talk -- Celine Bigot
+
+#### Free Pathogen Identification
+ * NGS enables the detection of microbial species without a-priori models
+  * MiSeq, MinION, PGM were all tested
+ * Working on own reference material, plus the Zymo community standard, plus other types of samples
+  * CNRGH standard has 10 bacteria, one fungal, and one other
+  * Standard is still in progress
+ * Interesting preliminary analysis
+  * Has done a WIMP analysis
+ * Based on processing time, the MinION and MiSeq are preferred to the PGM
+
+### Lightning Talk -- Scott Gigante
+
+#### Basecalling (Nanonet)
+ * Custom neural net basecaller; replaced with black box in the slides
+ * Wants to do away with Hidden Markov Models
+ * Used two *E. coli* libraries, one treated with methyltransferase, one unmethylated by PCR
+ * Used EventAlign for associating the basecall with events
+ * Training neural networks is not easy
+ * Feedback used with training, issues are often only realised weeks later
+ * Using a longer kmer results in a faster training loss, but lower error with increasing kmer size
+ * It is hard to judge when the training is complete
+ * GLM calls 99% of sites correctly
+ * Nanonet provides an excellent opportunity for training
+
+### Lightning Talk -- Ben Matern
+
+#### Identification of HLA Variants by cDNA sequencing
+ * Genes are highly polymorphic
+ * Interesting to look at the DNA and RNA
+  * RNA has alternative splicing
+ * Used GMap, which can insert introns (splicing-aware mapper)
+ * Has made a software platform, an alternative to laboratory techniques
+ * Aligned boundaries mapped to the reference genome
+ * Can take expression profiles and cluster into expression patterns
+
+### Lightning Talk -- Benjamin Istace
+
+#### Banana Genome
+ * One of the most sold / produced fruit around the workd, 100 million tonnes
+ * Most edible species of banana are from two hybrids
+ * Sequenced and assembled two genomes, looking at one now
+  * Long fragments were selected with the BluePippin
+ * Ran four R9.4 runs, generating 22 gigabases of reads
+ * Peak [modal] read length was between 25-30kb
+ * Read correction with Canu, processed into SmartDenovo
+ * Produced a genome with 704 contigs, N50 of 1.85 Mb
+
+### Lightning Talk -- Matthew McCabe
+
+#### Sequencing of BRD viruses
+ * Using the rapid sequencing kit
+ * Over 20 viruses that are associated with disease
+ * Diagnosis at the moment is mostly by PCR
+ * Looking for a rapid, untargeted sequencing approach
+ * Can untargeted MinION do this?
+  * 4 cultures, each infected, pooled, and nuclease added to remove host DNA
+  * Non-exised nucleic acid goes into the RAD kit
+  * Got 7,000 reads in the pass folder
+  * BLAST top hit took 9 hours
+  * Local viral sequence took about 10s
+  * 99.6% of reads were correctly identified
+
+### Lightning Talk -- Libby Snell (ONT)
+
+#### Direct RNA Sequencing
+
+* Kit is available now from the ONT store
+ * Sequencing of RNA molecule directly; it's possible for things that maybe couldn't have been done previously
+ * Not possible using any other technology
+ * Up and coming... ONT wants to get rid of cDNA; it's only there while they're stabilising the technology
+ * Ideally want to move to a 30-minute rapid preparation
+  * Ligate, wash, and load
+ * Potentially allows for a lower input amount
+ * Tested with quantitative samples: Ambion ERCC, Lexogen spike-in (SIRVs)
+ * Single-stranded prep works, and a 2D prep works (with RNA stabilised by cDNA)
+ * Getting full-length transcript coverage
+  * Currently output is about 70% of what it should be, probably due to blocking
+ 
+
+### Direct RNA Breakout -- John Tyson
+
+[DE: I missed this; I was distracted talking to David Stoddart about
+chimeric reads]
+
+### Direct RNA Breakout -- Rachael Workman
+
+#### Using *C. elegans* for direct RNA sequencing
+ * comparing direct RNA to cDNA
+ * looking at basic differences, what to expect
+ * Used strand switching and ligation sequencing
+ * No need for PCR when working with *C. elegans*, can get 30µg cDNA easily
+ * Called datasets with both older and newer basecallers
+
+#### Yield
+ * Direct RNA had less yield (as expected)
+ * Direct RNA had shorter reads
+ * RNA transcripts were perfectly fine for *C. elegans*
+ * lower MAQ alignments with RNA
+ * Once MAQ filtered, match percentage was similar between RNA and cDNA
+
+#### Comparing to Wormbase transcripts
+ * cDNA found most transcripts
+ * 1140 transcripts were detected in RNA, but not in cDNA
+ * Filtering out by base length didn't throw out much
+
+#### Full-length transcripts
+ * More degredation in the RNA run
+ * Looking at RNA alignments, get degredation in the UTR
+  * Might be aligner clipping
+ * Other end, more exon dropout, need to look at the soft clips
+
+#### Abundance comparison
+ * RNA tracked cDNA fairly well (R=0.76)
+ * Would be interesting to look at an Illumina run for comparison
+
+#### Homopolymer calling
+ * cDNA and RNA were pretty identical
+ * Initially compared without homopolymer correction
+ * Also compared with transducer basecalling
+ * [DE: With the transducer, the amount of C homopolymer bases exactly matched the amount of G bases]
+
+#### Take-home messages
+ * Library preps were robust for both cDNA and RNA
+ * RNA will get better
+ * You could stop doing Illumina, switch to cDNA and be fine
+
+### Direct RNA Breakout -- Chris Vollmers
+
+#### Single-cell RNASeq
+ * Using nanopore technology to improve
+ * Human cell atlas is now picking up pace
+  * Looking at the types of every human cell
+  * Illumina is good at defining gene expression of single cells
+ * Most single cell library preps involve full-length cDNA as an intermediate step
+
+#### B-cells
+ * Lab's primary interest is in B-cells
+ * Would love to do direct RNA seq, but cells contain about 10 femtograms of RNA
+  * A couple of orders of magnitude less than what is needed
+ * Was waiting [a *long* time] for Illumina run results to get back
+  * Why not put cDNA into a MinION flow cell?
+  * Designed indexes by randomly generating 60bp random sequences
+ * Trying to quantify gene expression, ended up breaking tools
+ * Looked at the overlap between Illumina and Nanopore expression
+  * Got fairly good correlation, r = 0.9 approx.
+  * Nanopore doesn't seem to have a length bias
+  * Cutting is needed for short transcripts, but can't be done
+  * [Possible that the inability to cut small RNA molecules means they are under-represented in Illumina reads]
+ * Used SIRV / synthetic spike-in molecules as a control
+  * Made 10fg of DNA, trivially easy and fairly quantitative
+  * Wanted to get by without reference genome annotation
+
+#### Pipeline -- MandalorION
+ * Only wrote this because it wasn't available elsewhere
+ * Picked up stuff [transcript isoforms] that wasn't in the reference sequence
+ * Sort reads based on the distribution, create [model] isoforms
+ * Get approximately linear correlation (r=0.97) when comparing reference-free versus reference-based mapping
+  * CD20 gene -- found an exon that wasn't in the reference assembly
+  * Looked at assembly by Trinity, found assemblies that were just really bad
+ * Working on systematic way for naming isoforms [odd that this doesn't exist already]
+
+### Direct RNA Breakout -- Andrew Smith
+
+#### Direct sequencing of 16s rRNA
+ * Very abundant in cells
+ * Getting to 16s RNA levels from gDNA would need 13-14 rounds of PCR
+ * If we could get a hold of 16s, woud be able to do a lot of good things
+ * Needed to customise the ONT RNA kit a bit
+  * Kit adapter was modified to be complementary to the 3' end of 16s
+  * This is a very well-conserved gene at the 3' end
+
+#### Proof of principle
+ * Working with highly-purified 16s
+ * 1.5kb rRNA gene
+ * Proof of concept carried out first on *E. coli*
+ * For methanococcus sequencing, needed to tweak the adapter a little bit
+ * With increasing read length, it becomes very much easier to classify things
+ * Reads that were over 1000 bases had 98% classification accuracy
+
+#### Coverage hump
+ * Hump at a particular region
+ * Very consistent base miscall
+ * Compared MRE600 *E. coli* with RsmG-delta
+  * Base call was different
+ * Nanoraw showed a modified ribonucleotide in the 16s gene
+  * This is a mechanism by which some microbes can defend against other microbes
+ * Wanted to show that this could be detected at other regions
+  * Pronounced low-amplitude signal from the modified strain
+ * Also found pseudouridine modification
+  * Very exciting to be able to detect this
+ * Ion current change affects current at adjacent regions
+  * Probably due to 5-6bp nucleotide window from which the current is sampled
+
+#### Diagnostic tool
+ * Titration with lower and lower amounts of 16s
+ * Could still see reads even at 5pg
+ * Depending on the amount added, could find result in 20s
+  * Basically the earliest opportunity for a read sequence to appear was when the first 16s reads came through
+
+### Direct RNA Breakout -- General Discussion and Questions
+
+ * Should we stop calling RNASeq [the stuff done on other systems] RNASeq?
+  * We are fighting an uphill battle
+  * The community will eventually come to a consensus sequence
+ * Neither GMap nor BLAT use a [transcript] reference; they don't rely on genome annotations
+ * Just doing cDNA is losing a lot of information
+ * Read-until could get rid of ribosomal sequences
+ * Direct RNA with a polyA primer is the only thing that can get the correct length of the polyA sequence
+  * No need to do VT23, can just use T23
+  * Can tell mispriming events when they happen
+  * [DE: Why not use a polyT primer with a double-stranded component?]
+  * SIRVs polyA tail is [always] 30bp
+ * mRNA only makes up 15% of total RNA sequences
+  * There is lots of rRNA
+  * Also a whole number of small RNA molecules
 
 ### Plenary Panel -- Raymond Hulzink, KeyGene
 
