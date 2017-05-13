@@ -4,6 +4,89 @@ Presentation notes on London Calling, written by David Eccles.
 
 ## Day 1 (May the Fourth be with You)
 
+### Gordon Sanghera
+
+#### The Kinks (intro sound / theme sound for this conference)
+ * A lot to do with nanopore sequencing
+ * Disruptive; appeared between The Beatles and [some other band that I didn't have time to take note of]
+ * Used knitting needles to slash speakers, basically launched heavy metal and punk
+
+#### Lord Kelvin
+ * Without measurement, there is no scientific progress
+ * We are now taking measurements and gathering information in real time
+ * Real time changes everything
+
+#### Billingsgate (location of conference)
+ * Named from a water gate where goods landed. It was managed by King Billing
+ * In 1699 an act of parliament allowed a fish market in Billingsgate, no other market was allowed within 6 2/3 miles
+ * Except for eels -- they were allowed to be sold by the Dutch, because of the help the Dutch provided during the Fire of London
+ * Yesterday, a Dutchman bearing eels gave a presentation
+   * Jellied eels are a local delicacy; attendees should try them out
+
+#### Disruptive Innovation
+ * Venue has been organised to seat 400 people; it has filled up
+ * There will be a guest speaker at dinner talking about disruptive innovation
+ * It is you lot [i.e. the attendees] doing the innovating
+ * Some of us have gambled our whole careers on this
+ * ONT is here today to learn from the community
+ * 25% of ONT staff are here to listen
+ * We are here at the beginning
+ * Many careers will be made through the bravery of the community
+
+### Zoe McDougall -- Housekeeping
+ * Packed program; any speakers should state at the beginning of their talk if they don't want something tweeted
+ * WiFi available; Battery charging points all over the place
+ * No scheduled fire drills, so if you hear an alarm, leave the building through the exists [DE: there was actually a scheduled drill at a previous London Calling conference]
+ * Three floors; eating and drinking will be done tonight in the basement
+
+### Lightning Talk -- Raja Mugasimangalam
+
+#### Is The Pot Labelled Correctly ?
+ * From India, taking us back several thousand years ago
+ * No dairy products had labels, all in pots
+ * Now have labels, but wanted to know if they were correct
+ * ViBact labelled well; it had a single microbe in it
+ * Yakult labelling okay, but could be better
+   * Found some fungi that shouldn't be there
+ * Home curd is unlabelled and untold
+   * The process of discovery: stir / spin / extract
+   * 12 products + 9 other
+   * Could identify pot with a very low number of reads
+ * Need at least 500 reads for a complex genome (if more than 10 bugs)
+ * Major composition of samples was determined in 4-6 hours
+ * Now have local calling
+ * Were there reagent contamination issues?
+   * Used controls with common contaminants
+   * Did multiple samples from different shops
+   * The same lots contained the same bugs
+
+### Lightning Talk -- Sebastian Johansson
+
+#### HLA Typing
+ * HLA is important, especially for organ transplantation
+ * There are two HLA classes of varying length
+ * Got products from an amplification primed on HLA sequences, pooled together
+ * 24 hours of sequencing produced a good barcode distribution
+ * Coverage was good for short reads, not so good for long reads
+ * Looked at alignments to HLA after filtering
+   * Got small islands of coverage that disappeared after filtering
+ * A few reads were found spanning the entire HLA region
+ * Works well for A, B, C, DQ
+ * Would be improved with spanning primers
+
+### Lightning Talk -- Franz Josef Müller
+
+#### Rapid Identification of Genomic Regions / SelectION
+ * Developed tool is a solution to a specific problem
+ * Intermediate step between basecalling and alignment (anchoring)
+ * Cuts down on the time required to carry out an alignmment
+ * Localised 160 reads to FMR1 region; 28 reads to repeat within FMR1
+   * Subsequent analysis time was less than a minute
+ * Essentially Burrows-Wheeler Transform + FM Index
+ * Four orders of magnitude faster than mapping everything
+ ' Mapping of over 90% of the reads, accuracy over 90% compared to BWA
+ * Nanopore sequencing excels at repeat expression finding
+
 ### Lightning Talk -- David Eccles
 
 #### Sequencing a parasite genome
@@ -18,6 +101,29 @@ Presentation notes on London Calling, written by David Eccles.
    * Sonication + Tip20 extraction
    * Run N50 was better than current reference genome
  * Poster talks about assembly discoveries
+
+### Lightning Talk -- Sally James
+
+#### Telomere to Telomere sequencing of Galdieria sulphuraria
+ * A real pain to lyse
+ * Telomere is an octamer repeated 26 times; other end is repeated 29 times
+ * Nanopore reads aligned to an area right at the ends of contigs
+ * Reads were piling up at the ends of contigs
+   * Many 40bp reads, pileup and completely stop dead at the end of the contig
+ * Can look at multiple repeats
+ * Currently assembling complex sub-telomeric regions
+
+### Lightning Talk -- Beth Lodge (ONT)
+
+#### VolTRAX
+ * All electronics are in the base of the unit, flow cells are added on top
+ * Voltrax integration program is open, applications are available online
+ * High-output kit, gives best throughput
+ * Yield variation between labs is reduced significantly
+ * It can do extraction as well as PCR
+   * Similar yields to other extraction methods
+ * Looking at 16s sequencing
+ * People don't need a fully-kitted out lab to do sample prep
 
 ### Philipp Euskirchen
 
