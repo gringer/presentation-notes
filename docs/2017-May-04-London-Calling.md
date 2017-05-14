@@ -39,6 +39,75 @@ Presentation notes on London Calling, written by David Eccles.
  * No scheduled fire drills, so if you hear an alarm, leave the building through the exists [DE: there was actually a scheduled drill at a previous London Calling conference]
  * Three floors; eating and drinking will be done tonight in the basement
 
+### Karen Miga
+
+#### The Use of *Really* Long Reads
+ * New excitement in the genomics field for reads 10-100kb in length
+ * Still not completely there with the longest reference assemblies
+ * Huge gaps exist in the human genome
+ * Most sequencing technologies take place on the chromosome arms
+ * It is difficult to get true haploresolution on the centromeres
+ * Centromere repeats are head to tail for millions of bases
+ * A fundamental genomic milestone is almost within reach: telomere-to-telomere assembly
+
+#### Assembly problems
+ * Repeats are 98-100% similar
+ * A short library with reads of 10kb can need reads of up to 100kb to span
+ * With human centromeres, even 100kb reads are too short
+ * What about unique markers within the region?
+   * There are some scars and SNVs
+   * SNVs are probably the most prevalent thing for assembling
+ * One sequence is not the problem
+   * Diploid read phasing is incredibly difficult
+ * There is sequence similarity for different genomic regions: satellites on chromosome 18 share with chromosome 20
+
+#### Resolving the issues; 3 key advances required
+ * Understanding of satellite sequence structure
+ * Increased throughput
+ * High-quality base calls
+
+#### Satellite array on chromosome Y
+ * Why Y? Y chromosome has the smallest satellite array, and is well characterised
+ * Have used a BAC-based strategy to assemble
+ * There are a set of 9 BACs that are known to span the region
+ * Assembly process: sequence BAC to high depth, use Illumina reads as a truth set
+
+#### Using UCSC Longboard protocol
+ * Linearising process for BAC, optimised to give the BAC sequence
+ * Managed to get a 100kb+ [library] N50
+ * In total, there were 3.5k reads of greater than 150kb
+ * From the nanopore reads alone, the accuracy was not high enough for centromeric analysis
+   * Polishing can be done to end up with high-quality consensus
+   * Polishing works well with about 10~60X coverage
+
+#### BAC sequencing example: 221.4kb
+ * Longest sequenced microsatellite region
+ * Can now detect 634 errors in this region
+   * Lots of the errors are homopolymers A & T
+ * Resequencing carried out on Illumina, including pentamer analysis
+   * Comparison with Illumina gives strong correlation
+   * ONT had only one outlier, AAAAA/TTTTT
+ * After error correction, only 23 of the variants seemed to be true
+
+#### Other BACs
+ * All BACs put together produce 346kb centromeric regions
+ * Assembled to R1B [particular human reference], median repeat region 350kb, SD 220kb ~ 460kb
+ * Looking at the individual cell lines, can find restriction enzymes that do not cut within the array and haplogroup-matched dataset
+   * get blot at the expected region
+
+#### Future work
+ * Move along from BAC-based approach
+ * With long reads, can probably span these regions
+ * Optimising the 1D protocol, ideally want to get to 60X coverage for long reads
+ * UCSC working on visualisation for variants and centromeric regions
+
+#### Questions
+ * How long to reads need to be to do all centromeres?
+   * A megabase sized read might work; the mean centromeric length is 3Mb
+   * If 3Mb can be spanned, then it will be possible to do a diploid resolution of centromeres
+ * Why does accuracy go down when increasing coverage?
+   * False positive consensus; there is a sweet spot
+
 ### Lightning Talk -- Raja Mugasimangalam
 
 #### Is The Pot Labelled Correctly ?
