@@ -108,6 +108,65 @@ Presentation notes on London Calling, written by David Eccles.
  * Why does accuracy go down when increasing coverage?
    * False positive consensus; there is a sweet spot
 
+### Björn Usadel - Bringing Omics Data to Users
+
+#### Plant Genomes: a historical perspective
+ * Plants are particularly nasty beasts with very large genomes
+ * Plants are riddled with repetitive sequence
+ * Wheat is particularly nasty (12GB)
+ * The whole genome and gene space is repetitive
+ * Multiple copies, even for small genome families
+
+#### Tomato
+ * Contrary to the usual definition of species, different tomato species are all very happy to cross with each other
+ * *Solanum penelli* is a very hardy plant
+ * Did sequencing with Illumina, fosmid, BAC
+ * Got scaffold N50 of 1.6Mb, contig N50 of 45kb
+ * Sequenced a new "cultivar", but there are millions of variants
+
+#### Oxford Nanopore and Plant Genomes
+ * Started with small algal genomes
+ * Canu and Pilon polishing worked well
+ * Processed 31 flow cells, each with over 1Gb per flow cell
+ * Read length was tunable, but a little bit dependant on what can be selected with the Pippin Prep
+ * Output quite high in 24 hours
+   * After the run was done, the spent flow cell could bee used for testing purposes
+ * Fairly good correlation between reported q value and actual quality
+   * 81-82% accuracy
+ * Very clean DNA is needed; herbal plants can be problematic
+   * Read correction with Canu improved accuracy to about 90%
+
+#### Assembly experimentation
+ * Tried a whole bunch of assemblers, tried subsampling data
+ * Started with 100X coverage
+ * Canu correction together with SMART-denovo got the best N50
+   * Canu makes fewer mistakes; Canu-corrected reads are fed into SMART-denovo
+ * Is SMART-denovo the best to use?
+   * It was much faster; Canu-corrected took 10,000 CPU hours
+ * Tried sampling, putting emphasis on getting long reads
+   * 30X coverage with longest reads works best
+   * In general, looked good when mapped to the reference genome
+
+#### Other quality metric: BUSCO
+ * All methods had similar unpolished BUSCO scores
+ * Pilon polishing worked the best
+
+#### *S. penelli* Compared to other genomes
+ * Pineapple N50 120kb
+ * Quinoa scaffold assembly 3.84Mb
+ * Citrus PacBio + Illumina, contig N50 2.2Mb, scaffold 4.2Mb
+ * Can actually get a good assembly in a few months
+
+#### Future / Questions
+ * Finishing other genomes
+ * Waiting on albacore improvements: longer insertions, longer deletions, overall better
+ * With R9.5, got one read that aligned well to chloroplasts
+ * What does it mean? Small labs can sequence a genome
+ * Repetitive elements are being analysed now. Centromeres are not being talked about
+ * Does Pilon introduce noise in the repeat regions?
+   * After 5-10 rounds of Pilon, things started jumping around
+   * Prefers 2-3 rounds of error correction with Pilon
+
 ### Lightning Talk -- Raja Mugasimangalam
 
 #### Is The Pot Labelled Correctly ?
