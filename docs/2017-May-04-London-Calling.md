@@ -167,6 +167,33 @@ Presentation notes on London Calling, written by David Eccles.
    * After 5-10 rounds of Pilon, things started jumping around
    * Prefers 2-3 rounds of error correction with Pilon
 
+### Jared Simpson -- Analysis Tools For Nanopore Data
+
+#### Signal-level nanopore data
+ * Want to work with raw signal as much as possible
+ * Channel passes single-stranded DNA through a nanopore
+ * Current samples are written out to FAST5 files
+ * Sequence disrupts the current
+ * DNA movement introduces a new sequence context
+ * We hope to see movements up and down that reflect movement of the DNA through the pore
+ * Signal-level analysis involves working with both raw samples and segmented currents (events)
+   * Events are fewer in number
+   * Event-based algorithms typically run faster, not a lot of data lost
+
+#### Basecalling
+ * The primary analysis task of nanopore
+ * Involves inferring the sequence that gives rise to the current
+ * Take a vector of events, apply labels to the events
+ * Overlapping labels are merged together to give a final base-called sequence
+ * Don't want any loss of information in going from events to base calls
+
+#### Event data / Nanopolish
+ * Larger files, slower models
+ * Nonetheless, better improvements in data
+ * Nanopolish was originally for improving consensus sequences
+ * Can now call SNPs, INDELs, and modified bases
+ * Can also be used for phasing reads and long-range haplotypes
+
 ### Lightning Talk -- Raja Mugasimangalam
 
 #### Is The Pot Labelled Correctly ?
