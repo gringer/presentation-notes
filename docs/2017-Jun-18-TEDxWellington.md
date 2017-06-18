@@ -90,3 +90,46 @@
 * If we lead our children into the world with the highest degree of
   creativity, we are able to unlock the unknown
 
+## Melissa Cristina-Marquez
+
+* Drank Red Bull so that she could stay up to look at a breach
+* Sharks have brought her to New Zealand
+
+* TV Sharks
+  * Assumed to be male, but people don't look for the clasp spurs
+  * Teenage Melissa got angry with talking male sharks, not because
+    they were talking, but because they didn't have clasp spurs
+
+* Academia
+  * Peers, mentors, professors were all male
+  * When working with sharks to put something into them, asked "What can
+    I do to get stronger?", told to "leave it to the males"
+  * Now there are lots of females
+
+* Some shark pups only had their mother's DNA
+  * Took reproduction into their own fins
+
+* Meaghen McCord: working with bull shark in South Africa
+  * Megan was 6-months pregnant; shark was also pregnant
+
+* Female sharks are larger than males
+
+* Female humans have to deal with things that males don't have to deal with
+
+* As a 48kg 5'1" woman, was aksed to pick up an anchor half her size and weight
+  * it was on a boat, in the middle of a storm, with the other crew members sick
+  * it didn't end well
+
+* Sex: male sharks need to bite the females for the act
+  * females have 3-times thicker skin where the males bite
+
+* Female humans also have thick skins
+  * females are most typically followed [on social media] due to appearance alone
+  * 74% of females said their appearance was criticised before their work
+
+* There are no female marine biologist role models... that's a problem
+  * Melissa wished for role models when she was 7 years old
+  * She is now 23 years old, but advocates for diverse sharks and
+  diverse role models via the fins united initiative
+  * Female voices are absent from the marine biologist field
+  * Don't let women researchers be ignored; shine a light: we're here
