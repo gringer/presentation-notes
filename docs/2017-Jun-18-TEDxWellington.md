@@ -55,6 +55,101 @@
   * Motto: Tu ki te ao [tawonga?]
   * A maori female on stage expressing who you are
 
+## Jo Cribb
+
+* Found out she was paid 1/3 less than the rest of the team
+  * Felt angry, betrayed, foolish
+  * A walking, talking statistic
+  * Women are being denied the ability to feed and clothe their children
+
+* New strategy to close the pay gap, Ask employer, "Are women being paid the same in this organisation?"
+  * Women get on average 88c in every dollar given to men; gap is
+  wider for Māori and Pacific Nations women
+
+* Gap driven by sexism & racism in the workplace
+  * Very subtle and subconscious (e.g. male member looking woman up and down)
+  * Woven very subtly into the workplace, and also our language
+
+* Asked for flexible work arrangements, as the law allows
+  * Turned down because that wasn't how the contracts were structured
+  * Most colleagues were sympathetic
+  * Some colleagues (both men and women): "I did it hard, you should too"
+
+* Sexism & discrimination is everywhere
+
+* Australian government: every organisation over 100 people needs to report their pay gap
+  * Gap is now trending down
+  * We can't wait for the government to solve the problems
+  * As a nation, we are crap with talking about money
+  * sexism & discrimination is driving the gender pay gap
+  * Ask your employer, "Are women being paid the same in this organisation?"
+
+* Some companies do well with closing the gender pay gap
+  * IAG, Sky City, ANZ
+  * Expected that these companies will win the race for talent
+  * Let's get the organisations working that don't want to talk about their gender pay gap
+
+* How to ask if it's not comfortable to ask
+  * Ask in a group
+  * Get someone to ask on your behalf
+  * Use the power of competition (i.e. other companies are talking about it)
+  * Just blame Jo Cribb -- she dared me to ask
+  * Practise asking with a friend
+  * Practise in front of a mirror
+  * Ask on behalf of your daughter
+  * Ask because it's fair
+
+* We could reach the tipping point if 100,000 people just asked
+
+## Marjan van den Belt
+
+* We are growth junkies
+  * Probably couldn't handle house prices staying the same to sustain
+  the homeless population
+  * Disasters, war, and crime are great for the GDP, good solutions
+  for solving problems are not
+  * We are told GDP must grow to solve problems
+
+* Trap was set about 150 years ago when horses did the work
+  * We discovered fossil fuels could solve problems
+  * This lead to an institutional theory that rewarded work
+  * Work sucks up resources and spits out waste
+  * In theory it works, but in reality that is not the case
+  * People are the economic man: rational, self-centred, maximising profit
+  * Money no longer represents real value
+
+* Forbes report: 5 men have more than half the wealth of the world
+  * i.e. one man has the wealth of 750 million people
+
+* We think we are not mindlessly addicted
+  * We know we could take a decent debt [?make a decent dent]
+  * We can make healthy food, but prefer supermarket food
+  * Addicts have new goals, a new shift
+
+* Last year all countries signed up to sustainable goals
+  * One tiny problem, goal #8: meaningful jobs and economic growth
+  * We can't change a thing using existing models
+
+* Whenever someone says "financial economic growth", stop and think,
+  "Is this growing a problem, or a solution?"
+
+* Housing and development
+  * Do we need larger houses while isolating people
+  * e.g. had a huge patch of land that was going to be subdivided
+    * clustered 27 houses onto 3 rugby fields
+    * developed a community
+    * community supports a farmer to make healthy food with a guaranteed income
+
+* Growth of dairy and water pollution: contaminated stream, could no longer make watercress
+  * Company launched to find ways to use water cress
+  * Part of money redirected to regenerate stream that started the drive to find a solution to the problem
+  * We are demanding personhood now for natural resources
+    * Whanganui river has been given legal personhood (the first in the world)
+    * What if this could be scaled up to catchment area
+
+* Many people are waking up from the reality illusion by creating
+  their own models
+
 ## Clare Christian
 
 * The galip nut -- oil, roast, or eat raw
