@@ -55,6 +55,106 @@
   * Motto: Tu ki te ao [tawonga?]
   * A maori female on stage expressing who you are
 
+## CoLiberate
+
+* Bop, Jodie & Sarah
+* Feeling
+* looking out into complete darkness
+  * feeling grew with her
+  * That was depression
+  * Struggle is knowing other people are carrying it with them
+  * Amazing feeling
+    * reaching out to someone ang getting it right
+* In a dark space
+  * A night club
+  * Danced a bit too well, forced R&R, and crutches
+  * Friends were still there; mum even paid rent
+  * What if it had been a full-scale breakdown?
+* CoLiberate
+  * value mental health just as much as everything else
+* Mental health: the whole length of it
+  * Mental health foundation
+  * 80% struggling with mental health
+  * Many are "languishing"
+    * Not bad enough to get resources
+    * Still having problems
+  * Attending first aid course
+    * What about a panic attack?
+    * What about suicidal ideation?
+    * There is no mental health component in First Aid
+* Panic Attack before work
+  * Picked up phone, called boss (who was understanding)
+  * Later on in the year, boss reacted differently; didn't trust any longer
+* One moment of empathy can transform experiences
+  * "My cat died"
+    * Not enough empathy
+    * Lost work for six weeks
+  * Better responses
+    * "Are you okay?"
+    * "What help do you need?"
+* Generating confidence for a culture shift
+  * If you are not fearing the worst, better equipped for everything else
+* Face off: me against the mirror
+  * Team meeting starts with a mental check-in (2 minutes each)
+  * Use a time-saving code based on birds
+* When we are at our physical peak, we get a new sense of confidence
+  * What is the mental equivalent?
+    * We are in 8 different spaces, with 12 tabs open in our head
+    * We need space between days
+* CoLiberate is a mental gym with weekly themes
+  * Weekly wananga - separating self-worth
+  * Hollow feeling once a project is over
+  * We need a "mental gym" culture
+  * Make it normal, accessible, cool
+  * Strut about in the mental equivalent of active wear
+  * We start by sharing
+* Speaking in a video: daily experience of anxiety
+  * let go of personal shame
+  * hunt for grounding and connection
+  * "my darkness is human"
+* It's time to shed light on the hard work we are doing to keep mentally well
+* Lifeline Aotearoa: 0800 543 354
+
+## Irene Wakefield
+
+* As a 15-year-old, asked a maths teacher why she neded to figure out
+  the height of a tree with distance and angles
+  * Wished someone had talked at that time about how to have a healthy
+    relationship with myself
+* Listening to conversations from adults
+  * Repeated phrase: "history repeating itself"
+  * Didn't want to repeat history, but didn't know how *not* to get into an abusive relationship
+    * Found herself being told what to wear
+    * "No one will ever love you the way I love you"
+    * 4 years into the relationship, her [physical] line was crossed
+* Headed overseas a bit later for a bit of a break
+  * Just before leaving, read an article mentioning "mental and emotional abuse"
+  * Why was her money spent on parties and alcohol?
+  * Didn't question things that should have been questioned
+  * Realised history had repeated itself
+  * Educated by facebook, but not a human being
+  * 10 days of solitude and reflection fired up her life
+* Decided to talk with 15-year-old girls about where to find love
+  * It's not in a packet of tim-tams
+  * It's not in a bottle of wine
+  * It's not in a nightclub
+  * Isolated self from people who loved me
+  * Girls were still nodding their heads, but crying instead of laughing
+  * Program that she runs holds space for talking deeper about values
+* Used to think the hard part was leaving an abusive relationship
+  * Hard part is actually standing with yourself
+  * Started with instagram and a blog, has blown up into large campaigns
+  * Not easy to stand and own that she became history repeating itself
+* The hard conversations
+  * "Are you okay with having to ask for permission to go out?"
+  * "If you could give your younger self one piece of relationship advice, what would it be?"
+  * The answer of one man with a tattoo
+    * Balance, and the differences between give and take
+    * He was wearing pink nailpolish
+    * A daily reminder to soften
+* Soften into the discomfort of conversations that really matter
+* It's okay to ask for help; info line 0800 456 450
+
 ## Jo Cribb
 
 * Found out she was paid 1/3 less than the rest of the team
