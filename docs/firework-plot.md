@@ -2,7 +2,7 @@
 
 A tutorial by David Eccles about representing a genome in a visually-interesting form.
 
-<img src="pics/genome_firework_Nb_small.png" alt="Genome firework plot for Nippostrongylus brasiliensis" title="Genome firework plot for Nippostrongylus brasiliensis" width="512"/></a>
+<img src="pics/genome_firework_Nb_small.png" alt="Genome firework plot for Nippostrongylus brasiliensis" title="Genome firework plot for Nippostrongylus brasiliensis" width="512"/>
 
 ## Preparation
 
