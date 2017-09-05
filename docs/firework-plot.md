@@ -58,7 +58,7 @@ To save as an SVG image, use `File -> Save image (entire scene)`, choose 'SVG' a
 
 <img src="pics/bandage_saveAs_SVG.png" alt="Saving as SVG with Bandage"  title="Saving as SVG with Bandage" width="512"/>
 
-This SVG image can then be loaded up in Inkscape and the *Page* exported as a PNG file. Here the width of the exported image has been set to 1024 pixels:
+This SVG image can then be loaded up in Inkscape and the *Page* exported as a PNG file via `File -> Export PNG image...`. Here the width of the exported image has been set to 1024 pixels:
 
 <img src="pics/inkscape_export_PNG.png" alt="Exporting as PNG with Inkscape"  title="Exporting as PNG with Inkscape" width="512"/>
 
