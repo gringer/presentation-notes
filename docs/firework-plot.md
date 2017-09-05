@@ -11,7 +11,7 @@ This tutorial uses the GFA file produced by [Canu](https://github.com/marbl/canu
 * [GFA file](data/Nb_ONTCFED_65bpTrim_t1.contigs.gfa.gz)
 * [Genome assembly](https://www.ebi.ac.uk/ena/data/view/GCA_900200055) (for reference, not used in this tutorial)
 
-The final image also includes length data from the existing [_Nippostrongylus brasiliensis_ genome assembly](http://parasite.wormbase.org/Nippostrongylus_brasiliensis_prjeb511/Info/Index/) that was assembled by the Wellcome Trust Sanger Institute:
+The final image also includes length data from the existing [_Nippostrongylus brasiliensis_ genome assembly](http://parasite.wormbase.org/Nippostrongylus_brasiliensis_prjeb511/Info/Index/) that was assembled by the [Wellcome Trust Sanger Institute](http://www.sanger.ac.uk/):
 
 * [PRJEB511 length data](data/lengths_Nb_WTSI.txt.gz)
 
