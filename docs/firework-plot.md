@@ -114,4 +114,4 @@ However, on loading these into Bandage via `Graph drawing -> Scope: Around nodes
 
 <img src="pics/bandage_linear_links.png" alt="Linear links in Bandage"  title="Linear links in bandage" width="512"/>
 
-Fixing this (assuming that is the goal) requires paying a bit more attention to the link structure of the GFA plot.
+Fixing this (assuming that is the goal) requires paying a bit more attention to the link structure of the GFA plot. It will be assumed that any contigs involved in these links will be treated as "linear / unlinked".
