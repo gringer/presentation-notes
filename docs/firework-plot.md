@@ -67,3 +67,51 @@ Resulting in the following image:
 <img src="pics/genome_contigs_all.png" alt="Image of all contigs with random colours" title="Image of all contigs with random colours" width="512"/>
 
 _Note: The intermediate Inkscape step is used (rather than exporting directly to PNG from Bandage) because subsequent steps will use Inkscape to modify the image._
+
+## Counting Links
+
+The GFA file needs to be processed to work out the number of contigs in linked subgraphs of the assembled genome. The `igraph` package is very useful for this. The only thing needed is the linking between one contig and the next, so some initial processing with `awk` is done to make the loading easier. Link lines (beginning with `L`) are extracted, and the second and fourth fields are extracted (containing contig names). Some links appear more than once in the Canu GFA output, so an additional pass through `uniq` is carried out:
+
+    grep '^L' data/Nb_ONTCFED_65bpTrim_t1.contigs.gfa | \
+      awk '{print $2,$4}' | sort | \
+      uniq > data/Nb_ONTCFED_65bpTrim_t1_contigLinks.txt
+
+This can then be loaded into R and converted into an undirected graph. The links are filtered to remove contigs that link to themselves:
+
+    > library(igraph);
+    > links.df <- 
+    +    read.table("data/Nb_ONTCFED_65bpTrim_t1_contigLinks.txt",
+    +               col.names=c("from","to"), stringsAsFactors=FALSE);
+    > links.df <- subset(links.df, !(from == to));
+    > links.graph <- graph.data.frame(links.df, directed=FALSE);
+
+The clusters containing subgraphs are identified. The `table` function is used to identify where to put the breaks for the histogram, and shows that beyond 11, the number of links in a graph is very large and might as well just be "lots":
+
+    > links.clusters <- clusters(links.graph);
+    > table(links.clusters$csize);
+    
+R Output:
+
+      2   3   4   5   6   7   8   9  10  11  26  27  34  38  41 
+    149  55  22  14   6   3   2   4   2   1   1   1   1   1   1 
+     57  76 106 
+      1   1   1 
+
+The association between contig names and subgraph cardinality is stored in a new data frame:
+
+    > contig.links.df <- 
+    +    data.frame(contig=names(links.clusters$membership),
+    +               linkID=links.clusters$membership);
+    > contig.links.df$card <- 
+    +    links.clusters$csize[contig.links.df$linkID];
+
+The comma-separated list of contigs can be stored in a file for filtering with Bandage. Bandage removes the initial `tig` and leading zeroes, so these are removed as well for the output file using `sub`:
+
+    > cat(sub("^tig0*","",contig.links.df$contig), sep=",",
+    +     file="data/linked_contigs.txt");
+
+However, on loading these into Bandage via `Graph drawing -> Scope: Around nodes`, it is apparent that there are still too many "boring" clusters, where the contigs are linked in an unambiguous fashion:
+
+<img src="pics/bandage_linear_links.png" alt="Linear links in Bandage"  title="Linear links in bandage" width="512"/>
+
+Fixing this (assuming that is the goal) requires paying a bit more attention to the link structure of the GFA plot.
