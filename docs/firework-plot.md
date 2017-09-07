@@ -183,3 +183,48 @@ The clusters containing interesting branches are identified by the presence of a
 Now it looks like only branched subgraphs are shown in the node subset, so this Bandage plot can be saved as an SVG file to be dealt with later:
 
 <img src="pics/bandage_branched_contigs.png" alt="Bandage branch-filtered contigs"  title="Bandage branch-filtered contigs" width="512"/>
+
+## Creating the Length Histogram
+
+This histogram will be created from scratch, to demonstrate the operations involved. To simplify things, the histogram for the existing WTSI assembly (which has no link information) will be plotted first. Read lengths are split into bins of roughly equal width in logarithmic space, then lengths (not counts) aggregated within each bin. A bar plot is generated, with a fitted curve over the top of it:
+
+    wtsi.lengths <- read.table("data/lengths_Nb_WTSI.txt.gz")[,1];
+    fib.divs <- round(10^((0:4)/5) * 2) * 0.5;
+    histBreaks <- round(rep(10^(0:16),each=5) * fib.divs);
+    lengthRange <- range(wtsi.lengths);
+    histBreaks <- histBreaks[(which.min(histBreaks < lengthRange[1])-2):
+                             (which.max(histBreaks > lengthRange[2])+1)];
+    wtsi.bases <- 
+      tapply(wtsi.lengths, cut(wtsi.lengths, breaks=histBreaks), sum);
+    wtsi.bases[is.na(wtsi.bases)] <- 0;
+    par(cex=1.5);
+    b.res <- barplot(wtsi.bases / 10^6, xaxt="n", names.arg=NA,
+      las=2, ylab="Aggregate length (Mb)");
+    points(spline(res, wtsi.bases/10^6, n=6*length(res)), type="l",
+      lty="dashed", lwd=2);
+
+<img src="pics/barplot_WTSI_basic.png" alt="WTSI genome bar plot"  title="WTSI genome bar plot" width="512"/>
+
+This plot is missing an X axis, which looks nicer with tick marks between the bars to explicitly state the binning boundaries. SI prefixes are used to reduce the space taken up by numbers:
+
+    valToSci <- function(val, unit = ""){
+        sci.prefixes <- c("", "k", "M", "G", "T", "P", "E", "Z", "Y");
+        units <- rep(paste(sci.prefixes,unit,sep=""), each=3);
+        logRegion <- floor(log10(val))+1;
+        conv.units <- units[logRegion];
+        conv.div <- 10^rep(0:(length(sci.prefixes)-1) * 3,
+          each = 3)[logRegion];
+        conv.val <- val / conv.div;
+        conv.val[val == 0] <- 0;
+        conv.units[val == 0] <- unit;
+        return(sprintf("%s %s",conv.val,conv.units));
+    }
+    b.int <- b.res[2]-b.res[1];
+    axis(1, 
+      at=seq(c(head(b.res,1))-b.int/2,
+      c(tail(b.res,1))+b.int/2, by=b.int),
+      labels=valToSci(histBreaks), las=2);
+
+<img src="pics/barplot_WTSI_sci.png" alt="WTSI genome bar plot with X-axis" title="WTSI genome bar plot with X-axis" width="512"/>
+
+So that's the general idea for the length histogram.
