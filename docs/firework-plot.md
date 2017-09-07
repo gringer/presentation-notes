@@ -124,7 +124,9 @@ In this case, the direction of the link is preserved, so that the associated con
       awk '{print $2,$3,$4,$5}' | sort | \
       uniq > data/Nb_ONTCFED_65bpTrim_t1_contigLinksDir.txt
 
-A bit of preprocessing is needed in R. The contig names will be appended with `_S` or `_E`, depending on which end of the contig is linked, which changes depending on whether it is a `+` or `-` connection, and whether the contig appears on the left-hand side or the right-hand side. Complex contig joins are identified by looking for duplicates. Finally, start and end contig fragments are linked to ensure that they appear in the same contig cluster.
+A bit of preprocessing is needed in R. The contig names will be appended with `_S` or `_E`, depending on which end of the contig is linked, which changes depending on whether it is a `+` or `-` connection, and whether the contig appears on the left-hand side or the right-hand side. Canu will occasionally produce conjugate duplicates, where there is a duplication of a link between two contigs in the reverse direction. This is worked around by alphanumerically ordering the from and to fields of each row.
+
+Complex contig joins are identified by looking for duplicates. Finally, start and end contig fragments are linked to ensure that they appear in the same contig cluster.
 
     library(igraph);
     links.df <- 
@@ -135,10 +137,16 @@ A bit of preprocessing is needed in R. The contig names will be appended with `_
       ifelse(links.df$fromDir == "+", "_E", "_S"));
     links.df$toSig <- paste0(links.df$to,
       ifelse(links.df$toDir == "+", "_S", "_E"));
-    newLinks.df <- unique(data.frame(from=links.df$fromSig,
+    links.df[links.df$fromSig > links.df$toSig,
+      c("fromSig","toSig")] <-
+      links.df[links.df$fromSig > links.df$toSig,
+        c("toSig","fromSig")];
+    newLinks.df <- unique(data.frame(
+      from=links.df$fromSig,
       to=links.df$toSig, stringsAsFactors=FALSE));
     complex.contigs <- 
       names(which(table(c(newLinks.df$from, newLinks.df$to)) > 1));
+    complex.contigs <- unique(sub("_[SE]$","",complex.contigs));
     contigNames <- unique(c(links.df$from, links.df$to));
     newLinks.df <- 
       unique(rbind(newLinks.df, 
@@ -164,3 +172,14 @@ R output:
      41  57  76 106 
       1   1   1   1 
 
+The clusters containing interesting branches are identified by the presence of a complex contig within the cluster:
+
+    complex.subgraphs <- 
+      Filter(function(x){any(x %in% complex.contigs)},
+        links.subgraphs);
+    cat(sub("^tig0*","",unlist(complex.subgraphs)), sep=",",
+      file="data/linked_complex_contigs.txt");
+
+Now it looks like only branched subgraphs are shown in the node subset, so this Bandage plot can be saved as an SVG file to be dealt with later:
+
+<img src="pics/bandage_branched_contigs.png" alt="Bandage branch-filtered contigs"  title="Bandage branch-filtered contigs" width="512"/>
