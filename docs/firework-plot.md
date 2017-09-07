@@ -80,8 +80,8 @@ This can then be loaded into R and converted into an undirected graph. The links
 
     > library(igraph);
     > links.df <- 
-    +    read.table("data/Nb_ONTCFED_65bpTrim_t1_contigLinks.txt",
-    +               col.names=c("from","to"), stringsAsFactors=FALSE);
+    +   read.table("data/Nb_ONTCFED_65bpTrim_t1_contigLinks.txt",
+    +     col.names=c("from","to"), stringsAsFactors=FALSE);
     > links.df <- subset(links.df, !(from == to));
     > links.graph <- graph.data.frame(links.df, directed=FALSE);
 
@@ -110,8 +110,57 @@ The comma-separated list of contigs can be stored in a file for filtering with B
     > cat(sub("^tig0*","",contig.links.df$contig), sep=",",
     +     file="data/linked_contigs.txt");
 
-However, on loading these into Bandage via `Graph drawing -> Scope: Around nodes`, it is apparent that there are still too many "boring" clusters, where the contigs are linked in an unambiguous fashion:
+However, on loading these into Bandage via `Graph drawing -> Scope: Around nodes`, it is apparent that there are still too many "boring" subgraphs, where the contigs are linked in an unambiguous fashion:
 
 <img src="pics/bandage_linear_links.png" alt="Linear links in Bandage"  title="Linear links in bandage" width="512"/>
 
-Fixing this (assuming that is the goal) requires paying a bit more attention to the link structure of the GFA plot. It will be assumed that any contigs involved in these links will be treated as "linear / unlinked".
+Fixing this requires paying a bit more attention to the link structure of the GFA plot. It will be assumed that any contigs involved in these links will be treated as "linear / unlinked".
+
+## Counting Non-trivial Links
+
+In this case, the direction of the link is preserved, so that the associated contig end can be identified. A subgraph is considered "complex" if it contains at least one non-trivial link, i.e. if the same contig end is linked to more than one contig. Again, the link lines in the GFA graph are filtered, but this time showing direction:
+
+    grep '^L' data/Nb_ONTCFED_65bpTrim_t1.contigs.gfa | \
+      awk '{print $2,$3,$4,$5}' | sort | \
+      uniq > data/Nb_ONTCFED_65bpTrim_t1_contigLinksDir.txt
+
+A bit of preprocessing is needed in R. The contig names will be appended with `_S` or `_E`, depending on which end of the contig is linked, which changes depending on whether it is a `+` or `-` connection, and whether the contig appears on the left-hand side or the right-hand side. Complex contig joins are identified by looking for duplicates. Finally, start and end contig fragments are linked to ensure that they appear in the same contig cluster.
+
+    library(igraph);
+    links.df <- 
+    read.table("data/Nb_ONTCFED_65bpTrim_t1_contigLinksDir.txt",
+      col.names=c("from", "fromDir", "to", "toDir"), 
+      stringsAsFactors=FALSE);
+    links.df$fromSig <- paste0(links.df$from,
+      ifelse(links.df$fromDir == "+", "_E", "_S"));
+    links.df$toSig <- paste0(links.df$to,
+      ifelse(links.df$toDir == "+", "_S", "_E"));
+    newLinks.df <- unique(data.frame(from=links.df$fromSig,
+      to=links.df$toSig, stringsAsFactors=FALSE));
+    complex.contigs <- 
+      names(which(table(c(newLinks.df$from, newLinks.df$to)) > 1));
+    contigNames <- unique(c(links.df$from, links.df$to));
+    newLinks.df <- 
+      unique(rbind(newLinks.df, 
+        data.frame(from=paste0(contigNames, "_S"), 
+        to=paste0(contigNames, "_E"))));
+    links.graph <- graph.data.frame(newLinks.df, directed=FALSE);
+
+Again the `clusters` function is used, but the `csize` value can no longer be used because of both sides of contigs appearing in the same cluster:
+
+    links.clusters <- clusters(links.graph);
+    names(links.clusters$membership) <-
+      sub("_[SE]$","",names(links.clusters$membership));
+    links.subgraphs <- tapply(names(links.clusters$membership),
+      links.clusters$membership, function(x){
+        unique(sub("_[SE]$","",x));
+      });
+    table(sapply(links.subgraphs,length));
+
+R output:
+
+      1   2   3   4   5   6   7   8   9  10  11  26  27  34  38 
+      4 149  55  22  14   6   3   2   4   2   1   1   1   1   1 
+     41  57  76 106 
+      1   1   1   1 
+
