@@ -227,4 +227,58 @@ This plot is missing an X axis, which looks nicer with tick marks between the ba
 
 <img src="pics/barplot_WTSI_sci.png" alt="WTSI genome bar plot with X-axis" title="WTSI genome bar plot with X-axis" width="512"/>
 
-So that's the general idea for the length histogram.
+So that's the general idea for the length histogram. Time to switch over to the new genome assembly and split by contig link count using the subgraphs previously identified. If any link count is 12 or more, it is set to 12.
+
+    cfed.lengths <- read.table("data/lengths_ONTCFED.txt.gz", 
+      row.names=2, col.names=c("length","contig"));
+    complex.df <- data.frame(contig = unlist(complex.subgraphs),
+      stringsAsFactors=FALSE);
+    complex.df$links <- rep(sapply(complex.subgraphs, length),
+      sapply(complex.subgraphs, length));
+    cfed.lengths$links <- 1;
+    cfed.lengths[complex.df$contig,"links"] <- complex.df$links;
+    cfed.lengths[cfed.lengths$links > 12,"links"] <- 12;
+    
+Now it's just a matter of using the link counts in a bar plot, adding a splash of colour, and overlaying the WTSI scaffold lengths as in the previous step. The file is saved as SVG to make it look nicer when manipulating in Inkscape:
+
+    library(RColorBrewer);
+    lengthRange <- range(c(wtsi.lengths,cfed.lengths$length));
+    fib.divs <- round(10^((0:4)/5) * 2) * 0.5;
+    histBreaks <- round(rep(10^(0:16),each=5) * fib.divs);
+    histBreaks <- histBreaks[(which.min(histBreaks < lengthRange[1])-2):
+                             (which.max(histBreaks > lengthRange[2]))];
+    split.lengths <- sapply(tapply(cfed.lengths$length, 
+      cfed.lengths$links, function(lengths.sub){
+        tapply(lengths.sub, cut(lengths.sub, breaks=histBreaks), sum);
+      }),c);
+    split.lengths[is.na(split.lengths)] <- 0;
+    bcols <- colorRampPalette(brewer.pal(11,"Spectral"))(
+      ncol(split.lengths));
+    colnames(split.lengths)[ncol(split.lengths)] <- "12+";
+    svg("pics/barplot_CFED.svg", width=12, height=4);
+    par(mar=c(4.5,0.5,2,4.5), cex.lab=1.3);
+    b.res <- barplot(t(split.lengths) / 10^6, xaxt="n", yaxt="n",
+      las=2, ylab="Aggregate length (Mb)", col=bcols, border=NA,
+      legend.text=colnames(split.lengths),
+      args.legend=list(x="topleft", inset=c(0.02,0.06), ncol=3,
+        title="Linked Contigs", cex=1.2));
+    axis(4);
+    mtext("Aggregate length (Mb)", side=4, line=3, cex=par("cex.lab"));
+    wtsi.bases <- 
+      tapply(wtsi.lengths, cut(wtsi.lengths, breaks=histBreaks), sum);
+    wtsi.bases[is.na(wtsi.bases)] <- 0;
+    points(spline(b.res, wtsi.bases/10^6, n=6*length(b.res)), type="l",
+      lty="dashed", lwd=2);
+    b.int <- b.res[2]-b.res[1];
+    axis(1, 
+      at=seq(c(head(b.res,1))-b.int/2,
+      c(tail(b.res,1))+b.int/2, by=b.int),
+      labels=valToSci(histBreaks), las=2);
+    mtext("Contig length", side=1, line=3.5, cex=par("cex.lab"));
+    invisible(dev.off());
+
+<img src="pics/barplot_CFED.png" alt="Genome bar plot, split by link count" title="Genome bar plot, split by link count" width="512"/>
+
+## Combining Bandage Plot and Histogram
+
+The next steps are a matter of mostly-manual "stamp collecting" in Inkscape to finish off the combined plot.
