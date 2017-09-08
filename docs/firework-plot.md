@@ -37,7 +37,7 @@ This tutorial also uses [R](https://www.r-project.org), [Bandage](https://rrwick
 
 ## Initial Concept Image
 
-Most of the concepts required to make one of these plots from an arbitrary assembly is already available in my own length histogram R script and in Bandage:
+Most of the concepts required to make one of these plots from an arbitrary assembly are already available in my own length histogram R script and in Bandage:
 
     /bioinf/scripts/length_plot.r -h lengths_ONTCFED.txt.gz
 
