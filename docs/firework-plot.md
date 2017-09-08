@@ -320,6 +320,6 @@ Manually shift subgraphs that were difficult to automatically unclump, and repos
 
 <img src="pics/barplot_CFED_inkscape_8-resize.png" alt="Resizing pages" title="Resizing pages" width="512"/>
 
-The combined image can then be either saved as a scalable SVG (e.g. for posters) via `File -> Save As...`, or saved as a PNG image, using `File -> Export PNG Image...` as before. This will produce something like the following:
+The combined image can then be either saved as a scalable SVG (e.g. for posters) via `File -> Save As...`, or saved as a PNG image, using `File -> Export PNG Image...` as before. A white rectangle can be placed underneath everything to produce a white (rather than transparent) background, if desired. This will produce something like the following:
 
 <img src="pics/barplot_CFED_inkscape_9-saved.png" alt="The final product - a genome firework plot" title="The final product - a genome firework plot" width="512"/>
