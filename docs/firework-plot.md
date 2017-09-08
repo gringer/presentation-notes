@@ -37,7 +37,7 @@ This tutorial also uses [R](https://www.r-project.org), [Bandage](https://rrwick
 
 ## Initial Concept Image
 
-Most of the preparatory work required to make one of these plots from an arbitrary assembly is already available in my own length histogram R script and in Bandage:
+Most of the concepts required to make one of these plots from an arbitrary assembly is already available in my own length histogram R script and in Bandage:
 
     /bioinf/scripts/length_plot.r -h lengths_ONTCFED.txt.gz
 
@@ -180,7 +180,7 @@ The clusters containing interesting branches are identified by the presence of a
     cat(sub("^tig0*","",unlist(complex.subgraphs)), sep=",",
       file="data/linked_complex_contigs.txt");
 
-Now it looks like only branched subgraphs are shown in the node subset, so this Bandage plot can be saved as an SVG file to be dealt with later:
+Now it looks like only branched subgraphs are shown in the node subset, so this Bandage plot can be saved as an SVG file to be dealt with later. The node width is set to 15 to make the contigs easier to see in the combined plot:
 
 <img src="pics/bandage_branched_contigs.png" alt="Bandage branch-filtered contigs"  title="Bandage branch-filtered contigs" width="512"/>
 
@@ -200,7 +200,7 @@ This histogram will be created from scratch, to demonstrate the operations invol
     par(cex=1.5);
     b.res <- barplot(wtsi.bases / 10^6, xaxt="n", names.arg=NA,
       las=2, ylab="Aggregate length (Mb)");
-    points(spline(res, wtsi.bases/10^6, n=6*length(res)), type="l",
+    points(spline(b.res, wtsi.bases/10^6, n=6*length(b.res)), type="l",
       lty="dashed", lwd=2);
 
 <img src="pics/barplot_WTSI_basic.png" alt="WTSI genome bar plot"  title="WTSI genome bar plot" width="512"/>
@@ -239,7 +239,7 @@ So that's the general idea for the length histogram. Time to switch over to the 
     cfed.lengths[complex.df$contig,"links"] <- complex.df$links;
     cfed.lengths[cfed.lengths$links > 12,"links"] <- 12;
     
-Now it's just a matter of using the link counts in a bar plot, adding a splash of colour, and overlaying the WTSI scaffold lengths as in the previous step. The file is saved as SVG to make it look nicer when manipulating in Inkscape:
+Now it's just a matter of using the link counts in a bar plot, adding a splash of colour, and overlaying the WTSI scaffold lengths as in the previous step. The RColorBrewer package is used to generate a reasonable gradient, then ripped to pieces to allow for an arbitrary length by feeding through the `colorRampPalette` function. The file is saved as SVG to make it look nicer when manipulating in Inkscape:
 
     library(RColorBrewer);
     lengthRange <- range(c(wtsi.lengths,cfed.lengths$length));
@@ -254,7 +254,8 @@ Now it's just a matter of using the link counts in a bar plot, adding a splash o
     split.lengths[is.na(split.lengths)] <- 0;
     bcols <- colorRampPalette(brewer.pal(11,"Spectral"))(
       ncol(split.lengths));
-    colnames(split.lengths)[ncol(split.lengths)] <- "12+";
+    colnames(split.lengths)[ncol(split.lengths)] <- 
+      paste0(colnames(split.lengths)[ncol(split.lengths)],"+");
     svg("pics/barplot_CFED.svg", width=12, height=4);
     par(mar=c(4.5,0.5,2,4.5), cex.lab=1.3);
     b.res <- barplot(t(split.lengths) / 10^6, xaxt="n", yaxt="n",
@@ -281,4 +282,23 @@ Now it's just a matter of using the link counts in a bar plot, adding a splash o
 
 ## Combining Bandage Plot and Histogram
 
-The next steps are a matter of mostly-manual "stamp collecting" in Inkscape to finish off the combined plot.
+The next steps are a matter of mostly-manual "stamp collecting" in Inkscape to finish off the combined plot. The branched Bandage graph is imported into the barplot SVG file [`File -> Import...`], then resized to be about two thirds of the width of the bar plot.
+
+<img src="pics/barplot_CFED_inkscape_1-resize.png" alt="Genome bar plot, with resized Bandage subgraphs" title="Genome bar plot, with resized Bandage subgraphs" width="512"/>
+
+The imported bandage plot is ungrouped [`<Ctrl> + <Shift> + G`], and individual contigs subgroups selected by dragging windows around them and grouping [`<Ctrl> + G`]. Zooming in and out with `+` and `-` respectively can help for this step. Zooming out to the entire drawing with `3` may also be useful. It's also possible to zoom in an out by holding down `<Ctrl>` and using the scroll wheel on a mouse, which will centre the zoom region on the mouse cursor. Scrolling around the image vertically can be done by using the scroll wheel, and scrolling horizontally by holding `<Shift>` and using the scroll wheel (or using a 2D scroll wheel, if that luxury is available).
+
+Note that Inkscape selection by default requires the entirety of an object to be surrounded by a dragged window before it will be selected, so a window boundary can start in a blank area within an existing grouped object and include part of that object without selecting any of it:
+
+<img src="pics/barplot_CFED_inkscape_2-grouping.png" alt="Grouping contigs" title="Grouping contigs" width="512"/>
+
+The graph is ungrouped [`<Ctrl> + <Shift> + G`] to allow grouping of the graph key [`<Ctrl> + G`], which is then duplicated [`<Ctrl> + D`] and moved to more a convenient location nearer to the bandage subgraphs. This will be used as a colour palette for the eyedropper tool when colouring subgraphs and moved around as different subgraphs are coloured.
+
+<img src="pics/barplot_CFED_inkscape_3-palette.png" alt="Shifting the duplicated graph key" title="Shifting the duplicated graph key" width="512"/>
+
+Subgraphs will be coloured based on the graph key. Due to the thresholding for the graph, it is only necessary to count to 12. Select [`s`] a subgraph, then use the eyedropper tool [`d`] and clicking on the appropriate box with the left mouse button. It's possible to change back to the selection tool by either choosing it directly [`s`], pressing the eyedropper key again [`d`], or pressing `<Esc>`.
+
+<img src="pics/barplot_CFED_inkscape_4-dropper.png" alt="Using the eye dropper" title="Using the eye dropper" width="512"/>
+
+If a mistake is made, the last operations can be undone by the undo operation [`<Ctrl> + Z`].
+
