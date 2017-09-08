@@ -1,6 +1,6 @@
 # Genome Firework Plot
 
-A tutorial by David Eccles about representing a genome in a visually-interesting form.
+A tutorial by David Eccles about representing a genome in a visually-interesting form. This tutorial describes a process for generating an image similar to the following:
 
 <img src="pics/genome_firework_Nb_small.png" alt="Genome firework plot for Nippostrongylus brasiliensis" title="Genome firework plot for Nippostrongylus brasiliensis" width="512"/>
 
@@ -238,8 +238,10 @@ So that's the general idea for the length histogram. Time to switch over to the 
     cfed.lengths$links <- 1;
     cfed.lengths[complex.df$contig,"links"] <- complex.df$links;
     cfed.lengths[cfed.lengths$links > 12,"links"] <- 12;
+
+## Colouring In
     
-Now it's just a matter of using the link counts in a bar plot, adding a splash of colour, and overlaying the WTSI scaffold lengths as in the previous step. The RColorBrewer package is used to generate a reasonable gradient, then ripped to pieces to allow for an arbitrary length by feeding through the `colorRampPalette` function. The file is saved as SVG to make it look nicer when manipulating in Inkscape:
+Now it's just a matter of using the link counts in a bar plot, adding a splash of colour, and overlaying the WTSI scaffold lengths as in the previous step. The `RColorBrewer` package is used to generate a reasonable gradient, which is then ripped to pieces to allow for an arbitrary length by feeding through the `colorRampPalette` function. The file is saved as SVG to make it look nicer when manipulating in Inkscape:
 
     library(RColorBrewer);
     lengthRange <- range(c(wtsi.lengths,cfed.lengths$length));
@@ -296,9 +298,28 @@ The graph is ungrouped [`<Ctrl> + <Shift> + G`] to allow grouping of the graph k
 
 <img src="pics/barplot_CFED_inkscape_3-palette.png" alt="Shifting the duplicated graph key" title="Shifting the duplicated graph key" width="512"/>
 
-Subgraphs will be coloured based on the graph key. Due to the thresholding for the graph, it is only necessary to count to 12. Select [`s`] a subgraph, then use the eyedropper tool [`d`] and clicking on the appropriate box with the left mouse button. It's possible to change back to the selection tool by either choosing it directly [`s`], pressing the eyedropper key again [`d`], or pressing `<Esc>`.
+Subgraphs will be coloured based on the graph key. Due to the thresholding for the graph, it is only necessary to count to 12. Select [`s`] a subgraph, then use the eyedropper tool [`d`] and clicking on the appropriate box with the left mouse button. It's possible to change back to the selection tool by either choosing it directly [`s`], pressing the eyedropper key again [`d`], or pressing `<Esc>`. If a mistake is made, the last operations can be undone by the undo operation [`<Ctrl> + Z`], and redone using the redo operation [`<Ctrl> + Y`].
 
 <img src="pics/barplot_CFED_inkscape_4-dropper.png" alt="Using the eye dropper" title="Using the eye dropper" width="512"/>
 
-If a mistake is made, the last operations can be undone by the undo operation [`<Ctrl> + Z`].
+When it's difficult to work out how many contigs there are in a subgraph, the contigs can be shifted around by selecting them without ungrouping using `<Ctrl>` and clicking with the left mouse button, then dragging the contig away. Once a subgraph has been appropriately uncovered and counted, the move operation(s) can be undone by repeated use of [`<Ctrl> + Z`].
 
+<img src="pics/barplot_CFED_inkscape_5-fragmented.png" alt="A fragmented (but still grouped) subgraph with 8 contigs" title="A fragmented (but still grouped) subgraph with 8 contigs" width="512"/>
+
+## Going Out With a Bang
+
+Once all the subgraphs have been recoloured, the key can be deleted. Shift a few subgraphs around so that the total width of the bandage plot area is the same as the graph below, with subgraphs roughly filling up the entire area.
+
+<img src="pics/barplot_CFED_inkscape_6-expanded.png" alt="Shifting subgraphs to fit the graph range" title="Shifting subgraphs to fit the graph range" width="512"/>
+
+Select all the subgraphs. Open up the *Align and Distribute* dialog box via `Object -> Align and Distribute...`, or [`<Ctrl> + <Shift> + A`], and click on the the `Randomize centres in both dimensions` icon within the `Rearrange` group. Click a few times on the `Unclump objects` icon right next to that.
+
+<img src="pics/barplot_CFED_inkscape_7-unclump.png" alt="Randomising and unclumping groups" title="Randomising and unclumping groups" width="512"/>
+
+Manually shift subgraphs that were difficult to automatically unclump, and reposition them as desired. It might be helpful to disable object snapping [`%`] while doing this. Add in additional labels as desired (e.g. the genome length and contig count). Finally, adjust the boundaries of the page to fit the image via `File -> Document Properties...` then `Resize page to content...`, putting in a 10pt margin for all four sides.
+
+<img src="pics/barplot_CFED_inkscape_8-resize.png" alt="Resizing pages" title="Resizing pages" width="512"/>
+
+The combined image can then be either saved as a scalable SVG (e.g. for posters) via `File -> Save As...`, or saved as a PNG image, using `File -> Export PNG Image...` as before. This will produce something like the following:
+
+<img src="pics/barplot_CFED_inkscape_9-saved.png" alt="The final product - a genome firework plot" title="The final product - a genome firework plot" width="512"/>
