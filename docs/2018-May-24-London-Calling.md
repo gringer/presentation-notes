@@ -37,21 +37,22 @@ GridION conceived Feb last year, has been relatively successful
 ## Platform
 
 Product line as it stands, all in-field
-MinION the most established
+MinION is the most established
 Out there GridION is doing well; easy to own, people using it as service
 PromethION - a beast of a machine, now out, runnable, generating pretty high yields
 
 Over 1000 Customers for GridION; We think we can ship within a week of an order.
 Certification program, growing quite rapidly
 
-In bags is a token that gets us access to a slightly modified version of the MinION flow cell; a series D ASIC. It's just better. First design had a few faults, including current cross-talk
-All things ate into yield. This is a fixed-up version of the ASIC. Can now enable very-long run times with sustainable yield of up to 100 hours. Enables 30Gb on a MinION.
+In your bags is a token that gets you access to a slightly modified version of the MinION flow cell: a series D ASIC. It's just better. First design had a few faults, including current cross-talk. All things ate into yield. This is a fixed-up version of the ASIC. Can now enable very-long run times with sustainable yield of up to 100 hours. Enables 30Gb on a MinION.
 
 PromethION; 48 individually-flow cells. 144,000 concurrent independent nanopore flow cells. Can hot-swap. Designed for quite lumpy workflows. Can be run as a high-throughput sequencer, just like any other.
 
+## PromethION
+
 Now dependent on Ruth on the Maracas
 
-Now dependent on You lot for reporting on twha's happening on PromethION
+Now dependent on You lot for reporting on what's happening on PromethION
 
 Now out of the Early access phase; $160,000 starter pack
 
@@ -59,37 +60,39 @@ Can take box back. When you buy PromethION can have access to upgrades. Next ver
 
 Have shipped 40 PromethION by this conference, should get to 60 by end of June.
 
-What do noew customer yield look like?
+What do new customer yield look like?
 
 * Most getting over 50 Gb (this was the target)
 * Some getting over 60
 * ONT is getting internally over 170 Gb
 * A roadmap to move to 500 Gb per flow cell
 
-NovaSeq-busting prices, provided you get the yields.
+These are NovaSeq-busting prices, provided you get the yields.
 
-New flow cell: single channel
-Redesign of multi-channel flow cell
+New flow cell: single channel. Also a redesign of the multi-channel flow cell.
 
 Will make sure that all of MinION kits will work on PromethION (RNA coming in June)
+
+## MinKNOW
 
 MinKNOW upgraded. Very nice UI, innards of the GUI have been completely refactorerd.
 Thinking about things like read-until. Including progressive unblock & dynamic voltage control, should increase data quiality.
 
-Progressive unblock:
+## Progressive unblock
 
-Blockages when you shove DNA thought a hole
-Can unblock by inverting potential
-Old software was the simplest thing that work. Unblocking was quite violent, would remove channels.
-New version doesn't destroy the channel; a more subtle, sophisticated version of unblocking the pore. Probably a larger uplift in difficult samples
+Blockages when you shove DNA thought a hole. Can unblock by inverting potential.
 
-Have generally improved kit quiality
+The old software was the simplest thing that worked. Unblocking was quite violent, would remove channels. The new version doesn't destroy the channel; a more subtle, sophisticated version of unblocking the pore. Probably a larger uplift in difficult samples.
+
+Have generally improved kit quality
+
+## Software
 
 3-4 years ago pulled in software team to talk about Read Until
 
 As DNA is going through the pore, can basecall and do something with it before it's gone through the pore. An in-silico selection. We wrote an API.
 
-Entire innards of MinKKNOW have been rejigged, read-until is coming back
+Entire innards of MinKNOW have been rejigged, read-until is coming back
 
 * balancing amplicons
 * Sequencing a certain region of human
