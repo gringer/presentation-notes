@@ -18,25 +18,21 @@ Every year, needs to do this. Promised investors would do a live demo. Has been 
 
 Ruth Moisie takes a tubefull of spit from Clive.
 
-## Recap - get into rhythim
+## Recap - get into rhythm
 
 Aim: Anybody to sequence anything anywhare
 
-Tring to make runniable aoutsided labs, real-time full-lenth reads
-ultra-low cost
-In the past day, few people have been demonstrating all features
-A drea ma few years ago
+Tring to make runnable outside labs, real-time full-length reads, ultra-low cost. In the past day, afew people have been demonstrating all features. This was a dream a few years ago.
 
-Olbigatory nanopore slide: array of membranes on a chip that we designed, catch 
-DNA from solution, stream through the pore, generate timy signals (a lot of work decoding)
-All asynchornous, get a full-lenth read in a few seconds
-Electrinics can be made small, cheap
-Decides break traditional bould - Would be stupid to make an electronic device with fluidics
-Also key - designing array in the factory
+## Olbigatory nanopore slide
 
-A number of talks; recently spoke about sub-1000 sequencing run; mostly on PromethION ($600)
+An array of membranes on a chip that we designed, catch DNA from solution, stream through the pore, generate tiny signals (a lot of work decoding) All asynchronous, get a full-lenth read in a few seconds. Electronics can be made small, cheap.
 
-GridION Conceived Feb last year, has been relatively successful
+Design breaks the traditional mould - Would be stupid to make an electronic device with fluidics. Also key for ONT was designing array in the factory.
+
+There have been a number of previous talks [by Clive]; recently spoke about sub-1000 sequencing run; mostly on PromethION ($600)
+
+GridION conceived Feb last year, has been relatively successful
 
 ## Platform
 
