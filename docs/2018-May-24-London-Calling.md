@@ -12,85 +12,105 @@ Introducing Clive Brown
 
 # Clive Brown
 
-02 arena -- looks like a nanopore, fits 20,000 people
-
-Every year, needs to do this. Promised investors would do a live demo. Has been spitting in tubes, but soomeine else will do it.
-
-Ruth Moisie takes a tubefull of spit from Clive.
+* Next year O2 arena -- looks like a nanopore, fits 20,000 people
+* Every year, I have been told that I need to do this: promised investors I would do a live demo.
+* Have been spitting in tubes, but soomeone else will do the prep.
+* Ruth Moisie takes a tubefull of spit from Clive.
 
 ## Recap - get into rhythm
 
-Aim: Anybody to sequence anything anywhare
-
-Tring to make runnable outside labs, real-time full-length reads, ultra-low cost. In the past day, afew people have been demonstrating all features. This was a dream a few years ago.
+* Aim: Anybody to sequence anything anywhare
+* Trying to make runnable outside labs
+* real-time full-length reads
+* ultra-low cost.
+* In the past day, a few people have been demonstrating all features.
+* This was a dream a few years ago.
 
 ## Olbigatory nanopore slide
 
-An array of membranes on a chip that we designed, catch DNA from solution, stream through the pore, generate tiny signals (a lot of work decoding) All asynchronous, get a full-lenth read in a few seconds. Electronics can be made small, cheap.
+* An array of membranes on a chip that we designed
+* catch DNA from solution
+* stream through the pore
+* generate tiny signals (a lot of work decoding) All asynchronous
+* get a full-lenth read in a few seconds
+* Electronics can be made small, cheap
+* Design breaks the traditional mould - Would be stupid to make an electronic device with fluidics
+* Also key for ONT was designing array in the factory
 
-Design breaks the traditional mould - Would be stupid to make an electronic device with fluidics. Also key for ONT was designing array in the factory.
+## Other talks
 
-There have been a number of previous talks [by Clive]; recently spoke about sub-1000 sequencing run; mostly on PromethION ($600)
-
-GridION conceived Feb last year, has been relatively successful
+* There have been a number of previous talks [by Clive]
+* recently spoke about sub-1000 sequencing run; mostly on PromethION ($600)
+* GridION conceived Feb last year, has been relatively successful
 
 ## Platform
 
-Product line as it stands, all in-field
-MinION is the most established
-Out there GridION is doing well; easy to own, people using it as service
-PromethION - a beast of a machine, now out, runnable, generating pretty high yields
+* Product line as it stands, all in-field
+* MinION is the most established
+* Out there GridION is doing well; easy to own, people using it as service
+* PromethION - a beast of a machine, now out, runnable, generating pretty high yields
+* Over 1000 Customers for GridION; We think we can ship within a week of an order.
+* Certification program, growing quite rapidly
 
-Over 1000 Customers for GridION; We think we can ship within a week of an order.
-Certification program, growing quite rapidly
+## Grab bag
 
-In your bags is a token that gets you access to a slightly modified version of the MinION flow cell: a series D ASIC. It's just better. First design had a few faults, including current cross-talk. All things ate into yield. This is a fixed-up version of the ASIC. Can now enable very-long run times with sustainable yield of up to 100 hours. Enables 30Gb on a MinION.
-
-PromethION; 48 individually-flow cells. 144,000 concurrent independent nanopore flow cells. Can hot-swap. Designed for quite lumpy workflows. Can be run as a high-throughput sequencer, just like any other.
+* In your bags is a token that gets you access to a slightly modified version of the MinION flow cell: a series D ASIC
+* It's just better
+* First design had a few faults, including current cross-talk; all things ate into yield
+* This is a fixed-up version of the ASIC
+* Can now enable very-long run times with sustainable yield of up to 100 hours
+* Enables 30Gb on a MinION.
 
 ## PromethION
 
-Now dependent on Ruth on the Maracas
+* 48 individually-controllable flow cells
+* 144,000 concurrent independent nanopore channels
+* Can hot-swap
+* Designed for quite lumpy workflows
+* Can be run as a high-throughput sequencer, just like any other.
 
-Now dependent on You lot for reporting on what's happening on PromethION
+* Now dependent on Ruth on the Maracas
+* Now dependent on You lot for reporting on what's happening on PromethION
+* Now out of the Early access phase; $160,000 starter pack
+* Can take box back
+* When you buy PromethION can have access to upgrades
+* Next version will run 48 flow cells
 
-Now out of the Early access phase; $160,000 starter pack
+* Have shipped 40 PromethION by this conference
+* should get to 60 by end of June.
 
-Can take box back. When you buy PromethION can have access to upgrades. Next version will run 48 flow cells.
+## PromethION Yields
 
-Have shipped 40 PromethION by this conference, should get to 60 by end of June.
-
-What do new customer yield look like?
-
+* What do new customer yields look like?
 * Most getting over 50 Gb (this was the target)
 * Some getting over 60
 * ONT is getting internally over 170 Gb
 * A roadmap to move to 500 Gb per flow cell
-
-These are NovaSeq-busting prices, provided you get the yields.
-
-New flow cell: single channel. Also a redesign of the multi-channel flow cell.
-
-Will make sure that all of MinION kits will work on PromethION (RNA coming in June)
+* These are NovaSeq-busting prices, provided you get the yields.
+* New flow cell: single channel. Also a redesign of the multi-channel flow cell.
+* Will make sure that all of MinION kits will work on PromethION (RNA coming in June)
 
 ## MinKNOW
 
-MinKNOW upgraded. Very nice UI, innards of the GUI have been completely refactorerd.
-Thinking about things like read-until. Including progressive unblock & dynamic voltage control, should increase data quiality.
+* MinKNOW upgraded
+* Very nice UI, innards of the GUI have been completely refactored.
+* Thinking about things like read-until
+* Including progressive unblock & dynamic voltage control, should increase data quality.
 
 ## Progressive unblock
 
-Blockages when you shove DNA thought a hole. Can unblock by inverting potential.
-
-The old software was the simplest thing that worked. Unblocking was quite violent, would remove channels. The new version doesn't destroy the channel; a more subtle, sophisticated version of unblocking the pore. Probably a larger uplift in difficult samples.
-
-Have generally improved kit quality
+* Blockages when you shove DNA thought a hole. Single strand forms structures on the other side of the pore.
+* Can unblock by inverting potential.
+* The old software was the simplest thing that worked
+* Unblocking was quite violent, would remove channels
+* The new version doesn't destroy the channel; a more subtle, sophisticated version of unblocking the pore
+* Probably a larger uplift in difficult samples.
+* Have generally improved kit quality
 
 ## Software
 
-3-4 years ago pulled in software team to talk about Read Until
-
-As DNA is going through the pore, can basecall and do something with it before it's gone through the pore. An in-silico selection. We wrote an API.
+* 3-4 years ago pulled in software team to talk about Read Until
+* As DNA is going through the pore, can basecall and do something with it before it's gone through the pore. An in-silico selection. We wrote an API.
 
 Entire innards of MinKNOW have been rejigged, read-until is coming back
 
