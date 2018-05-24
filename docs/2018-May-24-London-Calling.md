@@ -283,130 +283,168 @@ Introducing Clive Brown
 * People don't exploit alll the information in the signal
 * Quite a lot of work to do.
 
-Bases is not modelled, similar current for different sequences.
+* Bases is not modelled, similar current for different sequences.
 
-Progress on homopolymers, over past few months.
+* Progress on homopolymers, over past few months.
 
-Nanopolis is still the gold standard for preating these data. Can do well in some contexts.
+* Nanopolish is still the gold standard for preating these data
+* Can do well in some contexts.
 
 ## Nanopore solutions
 
-Have medaka, only works in base-space, comparable to nanopolish, but much faster
+* Have medaka, only works in base-space
+* Comparable to nanopolish, but much faster
 
-Have been working on a new tool, miyagi, for correcting homopolymers, HMM based, that's the way to do it, comparable or better to nanopolish in some circumstances.
+* Have been working on a new tool, miyagi, for correcting homopolymers
+* HMM based, that's the way to do it
+* comparable or better to nanopolish in some circumstances
 
 ## Fixing the problem
 
-One way: improve the chemistry.
+* One way: improve the chemistry.
 
-People are alreads combining data with another certain company. Has been long on our agenda to do the same thing on one platform. Would then not need the other company.
+* People are alreads combining data with another certain company
+* Has been long on our agenda to do the same thing on one platform
+* Would then not need the other company
 
-If you could combine multiple pores, would bet flattening out of errors.
+* If you could combine multiple pores, would get flattening out of errors
 
-R9.4 pore signal comes mostly from 3-4 bases. A run of Ts bigger than 3-4 gives flat ssignal. Can estimate bases using time domain. WOuld be better if we could de-flat the sections of data.
+* R9.4 pore signal comes mostly from 3-4 bases
+* A run of Ts bigger than 3-4 gives flat signal
+* Can estimate bases using time domain
+* Would be better if we could de-flat the sections of data
 
-Using read-ahead to look at more bases, rather than less. Will always be averaging over more bases.
+* Using read-ahead to look at more bases, rather than less
+* Will always be averaging over more bases
 
-Deal with more bases using machine learning.
+* Deal with more bases using machine learning
 
-Use Pore R8 - Lysenin based. R10 has two points about 9 bases apart.
+## Pore changes
 
-A particularly pathocogical error is a round of 5 Ts followed by two Gs. R10 spans the homopolymer giving an uppy-downly signal that the software can decode.
+* Use Pore R8 - Lysenin based
+* R10 has two points about 9 bases apart
 
-Equiallly, number of percentage correct homopolymers with R10 is better. Think that green accuracy line will shift up.
+* A particularly pathocogical error is a round of 5 Ts followed by two Gs
+* R10 spans the homopolymer giving an uppy-downy signal that the software can decode
 
-Can generate orthigonal erros that can shift consensus. These are now under very active development as potential products.
+* Equally, number of percentage correct homopolymers with R10 is better
+* Think that green accuracy line will shift up.
 
-What about combining together? 50-fold R9 with 50-fold R10, can easily exceed Q40 in consensus, proof of concept. These methonds are being implemented in miyagi tool, can use yourself (if you had R10 data).
+* Can generate orthogonal errors that can shift consensus
+* These are now under very active development as potential products
 
-Still not using dwell in these data. Using time domain, can boost these further.
+* What about combining together?
+* 50-fold R9 with 50-fold R10
+* can easily exceed Q40 in consensus, proof of concept
+* These methods are being implemented in miyagi tool, can use yourself (if you had R10 data).
 
-The principle is shown.
+* Still not using dwell in these data
+* Using time domain, can boost these further.
 
-Why not 5 pores. Why not 500, each with completely different error modes?
+* The principle is shown.
 
-We're going to crack this this year, and get it out to you as soon as you can.
+* Why not 5 pores?
+* Why not 500, each with completely different error modes?
 
-Doing very well on variant calling, specifically on SNVs.
+* We're going to crack this this year, and get it out to you as soon as you can.
 
-Have made at least one mutant of R9.4; R9.6. 9.4 gets one homopolymer wrong, 9.6 doesn't. Can make even variants of 9.4 that have significantly uncorrelated. Could release this in 2-3 weeks.
+* Doing very well on variant calling, specifically on SNVs.
 
-Could mess with the complement of the sequence. About 20 minutes, a pot of nucleotides in the kits, swap T for U and train basecaller. A/C/G/U version has different errors from A/C/G/T version. More complicated.
+* Have made at least one mutant of R9.4; R9.6. 9.4 gets one homopolymer wrong, 9.6 doesn't. Can make even variants of 9.4 that have significantly uncorrelated. Could release this in 2-3 weeks.
 
-My preference is to put multiple pores in the chip.
+## Template changes
 
-Can provide these tools to allow people to mess with the pores.
+* Could mess with the complement of the sequence
+* About 20 minutes, a pot of nucleotides in the kits, swap T for U and train basecaller
+* A/C/G/U version has different errors from A/C/G/T version. More complicated.
 
-Combining all three: two pores plus complement. Combining data that isn't correlated, as long as you pick the right data.
+* My preference is to put multiple pores in the chip.
+* Can provide these tools to allow people to mess with the pores.
 
-Will keep 9.4, but could make 9.6, could make R10
+* Combining all three: two pores plus complement
+* Combining data that isn't correlated, as long as you pick the right data.
 
-Question: is this useful, is that of interest. When would you like it?
+* Will keep 9.4, but could make 9.6, could make R10
+
+* Question: is this useful? is that of interest? When would you like it? [let ONT staff know]
 
 ## Flongle
 
-It's coming, really soon
+* It's coming, really soon
 
-MiNION + 1-off adapter. THat's the flongle. Has most of the electronics that's in the MinION. An array of copper electrodes. Can then make a very cheap crappy plastic flow cell with magical chemistry. Separates the cheap bits from the expensive bits.
+* MiNION + 1-off adapter, that's the flongle
+* Has most of the electronics that's in the MinION
+* An array of copper electrodes
+* Can then make a very cheap crappy plastic flow cell with magical chemistry
+* Separates the cheap bits from the expensive bits
 
-128 channels, limited by the forces that are needed to make connections.
+* 128 channels, limited by the forces that are needed to make connections
 
-The data is the same, can flongleise a MinION. Can flongleise a GridION. Projecting that v1 up to a Gb from one flow cell, should get 3Gb from a flongle.
+* The data is the same, can flongleise a MinION
+* Can flongleise a GridION
+* Projecting that v1 up to a Gb from one flow cell, should get 3Gb from a flongle.
 
-People don't want lots of data, problem is about how quickly enough data can be obtained. Also good for bacteria and virused. People should buy more if it's cheaper.
+* People don't want lots of data, problem is about how quickly enough data can be obtained. 
+* Also good for bacteria and virused
+* People should buy more if it's cheaper
 
-Flongle works, just like MinION.
+* Flongle works, just like MinION
 
-Squiggles are squiggles, they are the same.
+* Squiggles are squiggles, they are the same
 
-Invites for early adopers have going out.
+* Invites for early adopers have going out
 
-Looknig at $90-$100 per flow cells, about 5-10% of the total treatment cost for dentist.
+* Looking at $90-$100 per flow cells, about 5-10% of the total treatment cost for dentist
 
-Early access begins now, will release commercially in Q3.
+* Early access begins now, will release commercially in Q3
 
 ## Where to go
 
-Drive is to get sequencing out of the lab. Can survey what's going on in a river.
-
-Cheaper, easier, package it up, remove any extraneous equipment.
+* Drive is to get sequencing out of the lab
+* Can survey what's going on in a river
+* Cheaper, easier, package it up, remove any extraneous equipment.
 
 ## Zumbador
 
-Clive had the largest office, but had to rename Zumbador.
+* Clive had the largest office, but had to rename Zumbador.
 
-Idea is that you can take something very cheap, a piece of plastic, introduce a liquid because they're easy. After some reasonable time, like 10 minutes, can just sequence what's in there.
+* Idea is that you can take something very cheap, a piece of plastic, introduce a liquid because they're easy
+* After some reasonable time, like 10 minutes, can just sequence what's in there.
 
-New name: Ubikwibopsy (Ubik tube)
+## New name: Ubikwibopsy (Ubik tube)
 
 * Ubiquitious
 * Kwick
 * Liquid
 * Biopsy
 
-Turns out that DNA is really informative. Don't want to ship samples off to california. Want anyone to be able to do this themselves, and have complete control over their own data.
+* Turns out that DNA is really informative
+* Don't want to ship samples off to california
+* Want anyone to be able to do this themselves, and have complete control over their own data.
 
-Video: can put spit in a tube, a unch of stuff happens in the tube, can ind DNA onto solid phase support, then separate. It drops onto the flow cell.
+* Video: can put spit in a tube, a bunch of stuff happens in the tube, can bind DNA onto solid phase support, then separate. It drops onto the flow cell.
 
-Have embedded the library prep onto the flow cell, comes ready to run.
+* Have embedded the library prep onto the flow cell, comes ready to run.
 
-DNA in, sample prep appears early in the pore
+* DNA in, sample prep appears early in the pore
 
-Can get meaningful data really quickly. Yields aren't massive, but we've got it. 10 minutes from spit prep to WIMP.
+* Can get meaningful data really quickly
+* Yields aren't massive, but we've got it
+* 10 minutes from spit prep to WIMP
 
-Had bacterial infection, could fix it, see a drop in the bacteria.
+* Had bacterial infection, could fix it, see a drop in the bacteria.
 
-Saliva, lysis 10 minutes on Ubik tube.
+* Saliva, lysis 10 minutes on Ubik tube.
 
-Dentist offered to buy one.
+* Dentist offered to buy one.
 
-If you encapsulated enrichment, could use read-until to exclude human, or include human.
+* If you encapsulated enrichment, could use read-until to exclude human, or include human.
 
-Might not be the right audience for that.
+* We Might not be the right audience for that.
 
-Future versions like flongle and smidion will move towards anybody being able to touch a sample to a flow cell and know what's in.
+* Future versions like flongle and smidgION will move towards anybody being able to touch a sample to a flow cell and know what's in.
 
-Metrichor will make quantitative analysis of the self available direct ot the consumers.
+* Metrichor will make quantitative analysis of the self available direct ot the consumers.
 
 ## VolTRAX
 
