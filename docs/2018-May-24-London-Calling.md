@@ -402,3 +402,14 @@ In December fully-performant PromethION (48 flow cells) - ONT has just got 3Tb i
  - target is 12 Tb per run, equivalent to 3-4 NovaSeqs
 December Mk1C MinION
 
+## Questions
+
+Flongle - should be able to be chuckable; throwing away electronics is difficult.
+
+Multiple pores - Coverage will be reduced because errors aren't correlated. As long as you can pick the right one, which is the high and low quality base.
+
+Trying to get the same kits and settings on all devices.
+
+SmidgION - We can make it, that's not a problem. ASIC is reallyy cheap. Flongle comes first.
+
+R10 pore - frequency of homopolymers. Current software can call homopolymers as -1, some bias in software that is consistently doing it wrong. Will get a lot further with just incremental improvements.
