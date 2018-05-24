@@ -192,63 +192,96 @@ Introducing Clive Brown
 
 ## Yield Drop-off
 
-Initial software that classified data was the simplest that worked. Software misclassified reads, which would degrade the data. Low-complexity regions, rectified in next software release in June.
+* Initial software that classified data was the simplest that worked
+* Software misclassified reads, which would degrade the data
+* Low-complexity regions, rectified in next software release in June
 
-Need to Scale data, scaling can be biased, to be fixed (fix went out 2 weeks ago)
+* Need to Scale data, scaling can be biased, to be fixed (fix went out 2 weeks ago)
 
 ## Unblocking
 
-Extracting from chitinous insect won't be the same as a drop of blood. Not the whole story, can get DNA out. There have been issues with things sticking to tubes.
+* Extracting from chitinous insect won't be the same as a drop of blood
+* Not the whole story, can get DNA out
+* There have been issues with things sticking to tubes
 
-If initial yield was high, would drop off suddenly. Chickens do this.
+* If initial yield was high, would drop off suddenly
+* Chickens do this
 
-Software that you need to kick out DNA is different for different samples.
+* Software that you need to kick out DNA is different for different samples
 
-Some kinds of DNA form secondary structure as they get to the other side of the pore, creating a block that kills the pore.
+* Some kinds of DNA form secondary structure as they get to the other side of the pore, creating a block that kills the pore.
 
-Another upgrade coming to change the unblock logic that should level out yield differences over time.
+* Another upgrade coming to change the unblock logic that should level out yield differences over time.
 
 ## Kits
 
-Recently settled lawsuit about hairpin
+* Recently settled lawsuit about hairpin
 
-Came up with a system to do 1D². Version 1 went out a few months ago. It is now due for a revamp. Adapters will be improved to imporoved the performance of the system. Looking for 60% reads 1D², should get to Q20. Software is anti-delluvian, 4 years old.
+* Came up with a system to do 1D²
+* Version 1 went out a few months ago
+* It is now due for a revamp
+* Adapters will be improved to imporoved the performance of the system
+* Looking for 60% reads 1D², should get to Q20
+* Software is antediluvian, 4 years old
 
-A lot of people have complained that they can't do amplicons. New kit optimised for PCR uses a special set of barcodes that will enable barcodes to be paired up (UMI).
-
-Will go back again, revamp it, and make a performant version.
+* A lot of people have complained that they can't do amplicons
+* New kit optimised for PCR uses a special set of barcodes that will enable barcodes to be paired up (UMI).
+* Will go back again, revamp it, and make a performant version.
 
 ## Targeted sequencing
 
-Technology was to take a deactivated Cas9. Guide RNA, hybridised to sample, subset of reads is pulled down to pore. WOrking quite nicely. Will be out as a kit later in the year.
+* Technology was to take a deactivated Cas9
+* Guide RNA, hybridised to sample, subset of reads is pulled down to pore
+* Working quite nicely
+* Will be out as a kit later in the year.
 
 ## Direct RNA sequencing
 
-Can put RNA through the pore just like DNA. Proven very popular, there's lots of stuff in RNA. Not as performant as DNA product. Get full-length RNA moelcules, can see all the modifications. Can really get to the full-length biology.
+* Can put RNA through the pore just like DNA
+* Proven very popular, there's lots of stuff in RNA
+* Not as performant as DNA product
+* Get full-length RNA moelcules, can see all the modifications
+* Can really get to the full-length biology.
 
-Nanopore is quantitative, see all the splice formas.
+* Nanopore is quantitative, see all the splice formas.
 
-Now focusing on making RNA as performant as DNA. Want to increase speed RNA goes through the pore. WIll move to 110 bases per second, looking at improved adapters, simpler, fast library prep, incremental advances in basecalling.
+* Now focusing on making RNA as performant as DNA
+* Want to increase speed RNA goes through the pore
+* Will move to 110 bases per second
+* Looking at improved adapters, simpler, fast library prep, incremental advances in basecalling
 
 ## Field sequencing
 
-Despair when looking at what people take to the field - polystyrene ice bucket kills me. A lot of work has gone to ambient shipping. Looking to post flow cells without cooling.
+* Despair when looking at what people take to the field - polystyrene ice bucket kills me
+* A lot of work has gone to ambient shipping
+* Looking to post flow cells without cooling
 
-Can ship at ambient, most reagents.
+* Can ship at ambient, most reagents
 
-Looking at storing ambient, a few kits left to lyophilise. Especially issue in places where don't have a lab.
+* Looking at storing ambient, a few kits left to lyophilise
+* Especially an issue in places where don't have a lab
 
 ## Consensus Accuracy
 
-Looked at fixing this issue a few months ago. The thing that most people hold up to nanopore.
+* Looked at fixing this issue a few months ago
+* The thing that most people hold up to nanopore
 
-Cornering the rat, and then stamping on it. We're now tickling the rat.
+* Cornering the rat, and then stamping on it
+* We're now tickling the rat
 
-We're not at the limit yet. Worthin talking to the team who are here. There are some limitations in the current software.
+* We're not at the limit yet
+* Worth talking to the team who are here
+* There are some limitations in the current software
 
-Current trianing set, issues with scaling / chunking of data. Still arenät learning all the context. We still trian on bacteria. We don't learn in damage and modifications. There are some software limitations, and other issues.
+* Current training set, issues with scaling / chunking of data
+* Still aren't learning all the context
+* We still trian on bacteria
+* We don't learn in damage and modifications
+* There are some software limitations, and other issues.
 
-People assemble and polish, not fully-utilising all the signal. People don't exploit alll the information in the signal. Quite a lot of work to do.
+* People assemble and polish, not fully-utilising all the signal
+* People don't exploit alll the information in the signal
+* Quite a lot of work to do.
 
 Bases is not modelled, similar current for different sequences.
 
