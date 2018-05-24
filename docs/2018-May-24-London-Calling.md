@@ -110,65 +110,85 @@ Introducing Clive Brown
 ## Software
 
 * 3-4 years ago pulled in software team to talk about Read Until
-* As DNA is going through the pore, can basecall and do something with it before it's gone through the pore. An in-silico selection. We wrote an API.
+* As DNA is going through the pore, can basecall and do something with it before it's gone through the pore
+* An in-silico selection
+* We wrote an API.
 
-Entire innards of MinKNOW have been rejigged, read-until is coming back
+* Entire innards of MinKNOW have been rejigged, read-until is coming back
 
 * balancing amplicons
 * Sequencing a certain region of human
 
-Coming back in second-half of year, coming back in anger. Will be ale to dynamically select molecules on the fly.
+* Coming back in second-half of year, coming back in anger
+* Will be ale to dynamically select molecules on the fly
 
 ## MinIT
 
-For MinION: Common complaint is the computer. That has caused a lot of trouble. Making a device called MinIT. It should be almost zero configuration.
+* For MinION: Common complaint is the computer; that has caused a lot of trouble
+* Making a device called MinIT
+* It should be almost zero configuration.
 
-Plug it in, connect it, pair your iPhone display, ready to sequence.
+* Plug it in, connect it, pair your iPhone display, ready to sequence.
 
-Can run off batteries. Can run off 12V supply.
+* Can run off batteries. Can run off 12V supply.
 
-Will put Guppy in there, will keep up with MinION basecalling, critical for ReadUntil. Also embedding Epi2Me.
+* Will put Guppy in there, will keep up with MinION basecalling, critical for ReadUntil
+* Also embedding Epi2Me.
 
-Pretty confident that a large number of people will want a hand with analysis. Should be orderable today.
+* Pretty confident that a large number of people will want a hand with analysis
+* Should be orderable today.
 
-Have gone for GPUs in MinIT; going for neural-network based AI. A bunch of sequential matrix computations. Quite a large number of bioinformatics things can be optimised on the same hardware with the same performance.
+* Have gone for GPUs in MinIT; going for neural-network based AI
+* A bunch of sequential matrix computations
+* Quite a large number of bioinformatics things can be optimised on the same hardware with the same performance.
 
-MinION Mk1C - MinIT with the aility to load a flow cell, or flongle. Target December. Should be able to run a single flow cell without any external needs.
+* MinION Mk1C - MinIT with the aility to load a flow cell, or flongle
+* Target December
+* Should be able to run a single flow cell without any external needs
 
-It's the kind of thing a dentist can run. It also looks really cool.
+* It's the kind of thing a dentist can run
+* It also looks really cool
 
 ## Epi2Me
 
-A bioinformatics platform. Embedded workflows doing the kind of analyses that people want to run. Can be run in the cloud, or workflows can come to the computer: GridION, PromethION, MinIT. Lots of reasons, 1) a lot of computing in the boxes.
+* A bioinformatics platform
+* Embedded workflows doing the kind of analyses that people want to run
+* Can be run in the cloud, or workflows can come to the computer: GridION, PromethION, MinIT. 
+* Lots of reasons, 1) a lot of computing in the boxes.
 
-Expertise in optimising on GPUs. Sometimes people don't want to pipe data over to the over side of the world.
+* Expertise in optimising on GPUs
+* Sometimes people don't want to pipe data over to the over side of the world
 
-We think it's more usable now, can upload custom reference, will provide data storage.
+* We think it's more usable now, can upload custom reference, will provide data storage
 
-We will release Epi2Me on MinIT in Q3 - a MinIT with MinION will do this locally in Q3.
+* We will release Epi2Me on MinIT in Q3 - a MinIT with MinION will do this locally in Q3
 
-Will be commercialised. When you buy a flow cell; have invented something called MetriCoin. When you buy flow cells or reagents, will get MetriCoin, can use to run workflows. People who don't have bioinformatics support, will have access to bioinformatics services.
+## Epi2Me Commercialisation
+
+* Will be commercialised
+* When you buy a flow cell; have invented something called MetriCoin
+* When you buy flow cells or reagents, will get MetriCoin, can use to run workflows
+* People who don't have bioinformatics support will have access to bioinformatics services
 
 ## Chemistry improvements
 
-Platform performance is now much closer to what Clive tweets
-Customer runs by kits is converging, variance is decreasing
-Largely due to kit simplification
-Early kits had a cholesterol tether; it sticks to everything that is hydrophobic. We have been removing that from all of our kits.
-
-Generally customer performance has started to converge with nanopore.
+* Platform performance is now much closer to what Clive tweets
+* Customer runs by kits is converging, variance is decreasing
+* Largely due to kit simplification
+* Early kits had a cholesterol tether; it sticks to everything that is hydrophobic
+* We have been removing that from all of our kits.
+* Generally customer performance has started to converge with nanopore.
 
 ## Read Length
 
-Fragment length is read length; largely in customer hands
-Most platforms, the optics / chemistry conks out
-If you can present with long reads, it will sequence it
+* Fragment length is read length; largely in customer hands
+* Most platforms, the optics / chemistry conks out
+* If you can present with long reads, it will sequence it
 
-Some of thought-leading developers have tried to present pore with enormous, intact lengths of DNA. The developers found a bug in the software, ONT software was chopping up reads.
-
-In principle, if you can do 2 Megabases, can do 20 Megabases
-
-Challenge is whole-chromosomal sequencing.
+* Some of thought-leading developers have tried to present pore with enormous, intact lengths of DNA
+* The developers found a bug in the software, ONT software was chopping up reads
+* In principle, if you can do 2 Megabases, can do 20 Megabases
+* Challenge is whole-chromosomal sequencing
 
 ## Yield Drop-off
 
