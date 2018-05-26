@@ -5,6 +5,56 @@ date: "24 Mai 2018"
 output: html_document
 ---
 
+# Gordon Sanghera - Opening
+
+## Intro music - Arctic Monkeys
+
+* A band that was around when most ONT staff were alive
+* In 2005, they went straight in at number 1
+* No sales, no marketing, used myspace to allow people to download one sing
+* It was a bunch of kids
+* Since then, there's been no need to pander to the large organisations
+
+## Sequencing landscape
+
+* So many things have been proposed for nanopore sequencing
+* The oil industry has problems with microbes
+* The shipping industry has problems with ballast tanks
+
+## Statistics
+
+* The conference has 600 people - 500 customers, and 100 Nanopore people (with blue lanyards)
+* Goal of ONT: Allowing anyone to sequence anything anywhere
+* There are 7,000 MinIONs; 140 GridIONs; 40 beta PromethIONs; all done with community-based campaigns
+
+## What it all means
+
+* We are at the cusp of the fourth industrial revolution
+* We are seeing things that are in sci-fi films
+* Uber's actual goal: delivering anything to anyone anywhere
+* We are bringing testing closer to the customers
+* People can use Air B&B instead of hotels
+* With nanopore, we are enabling the Internet of Living things
+* There are 12500 sequencing centres in the world
+* When people are provided access to real-time tools, we open up new opportunities
+* Genoscope has 85 coral species
+* General theme: More people, more diverse applications
+
+## Service Provision
+
+* KeyGene is the first authorised PromethION service provider
+    * Providing service to the lettuce industry
+
+## The Dunbar Number - 150
+
+* About the numer that were in the first nanopore conference
+* Need to work out how to help people
+* Ninja programming schedule
+    * Repeating some breakout sessions
+    * A workshop to improve the digital community (Andy Davies)
+    * 300 people have downloaded the software App
+    * Interact button allows people to ask questions during plenary sessions
+
 # Clive Brown
 
 ## Novel statements selected by David Eccles
