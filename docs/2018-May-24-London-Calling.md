@@ -12,12 +12,12 @@ output: html_document
 * Live sample prep, sequencing, and WIMP analysis of Clive Brown's DNA by Ruth Moysey
 * Voucher for Series D ASIC; longer run time, potentially 30 Gb from a single MinION
 * ONT has a roadmap for moving to 500 Gb from a single PromethION flow cell (NovaSeq-busting prices)
-* Read-until is coming back [in anger]
+* [Read-until is coming back [in anger]
 * MinIT is orderable in the store
 * Mk1C sequencer (MinION combined with MinIT) should be available December
 * Epi2me will be embedded in MinIT, GridION, PromethION (local analysis workflows)
 * Epi2me will be commercialised via MetriCoin (workflow currency, included with flow cell / kit purchases)
-* New 1D² kit that uses UMIs in adaptors, increasing accuracy to Q20 and allowing amplicon sequencing
+* New 1D² kit coming that uses UMIs in adaptors, increasing accuracy to Q20 and allowing amplicon sequencing
 * Miyagi tool for combining reads from different pores for increased consensus accuracy
 * Slightly mutated forms of R9.4 have been tested; could release a variant-pore flow cell in a few weeks if there is interest
 * Flongle early-access begins now, released commercially in Q3
