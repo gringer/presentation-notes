@@ -561,3 +561,57 @@ output: html_document
 * SmidgION - We can make it, that's not a problem. ASIC is reallyy cheap. Flongle comes first.
 
 * R10 pore - frequency of homopolymers. Current software can call homopolymers as -1, some bias in software that is consistently doing it wrong. Will get a lot further with just incremental improvements.
+
+# Liana Kafetzopoulou
+
+## Intro
+
+* ONT managed to fit her name on a MinION two years ago
+* Want to be able to sequence all RNA viruses with a single protocol
+* Charles Chiu published a protocol: reverse transcription using a random nonamer [9-mer]
+    * creates a cDNA library
+
+## Samples for testing
+
+* RIPL
+* Samples that were the most prevalent: chikungunya & Dengue
+* Had to test sensitivity as well
+    * Even at higher CTs, can get the whole genome with the random nonamer protocol
+    * Percentage of reads (coverage) on MinION match Illumina and MinION
+* What about when you don't know what is there?
+    * When you can assemble 80% of the genome, it's probably there
+    * Three different kits, consistent results
+
+## Taking it into the field
+
+* Testing on Lassa virus, a very divergent RNA virus
+* Lassa is endemic in Nigeria, outbreaks twice a year
+* Take positive samples for sequencing
+* Working great until Nigeria hit more cases than were ever before seen
+* Got data out as soon as it was generated
+
+## Processing
+
+* Only doing DNAse treatment
+* PoreChop
+* Using Canu to assemble, then BLAST to find the closest reference
+* Used De-novo approach to feed mapping
+
+## Diagnostics
+
+* Existing in-country diagnosis uses two RTPCRs
+* Looked at the phylogeny; MinION assemblies were all spread around, all independent spillovers
+* MinION is definitely accurate enough to tell if there's human to human transmission
+* There were two samples that looked marvelously identical
+    * Looked at patient forms, found out that they were from the same patient, taken 6 hours apart, one SNP difference
+* NCDC and WHO had a great need to know what was happening; the country as well...
+* Country took the time and attention to listen
+
+## Challenges
+
+* MinION overheated in the first run
+* Time scale changed massively, changed from pilot run to something else
+
+## Outcome
+
+* Were able to make 35 lassa virus sequences in a month
