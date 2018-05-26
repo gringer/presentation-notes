@@ -5,17 +5,33 @@ date: "24 Mai 2018"
 output: html_document
 ---
 
-# Rosemary Dokos
-
-Thnakyou to everone whoäs presented, participated, presented posters
-Introducing Clive Brown
-
 # Clive Brown
+
+## Novel statements selected by David Eccles
+
+* Live sample prep, sequencing, and WIMP analysis of Clive Brown's DNA by Ruth Moysey
+* Voucher for Series D ASIC; longer run time, potentially 30 Gb from a single MinION
+* ONT has a roadmap for moving to 500 Gb from a single PromethION flow cell (NovaSeq-busting prices)
+* Read-until is coming back [in anger]
+* MinIT is orderable in the store
+* Mk1C sequencer (MinION combined with MinIT) should be available December
+* Epi2me will be embedded in MinIT, GridION, PromethION (local analysis workflows)
+* Epi2me will be commercialised via MetriCoin (workflow currency, included with flow cell / kit purchases)
+* New 1D² kit that uses UMIs in adaptors, increasing accuracy to Q20 and allowing amplicon sequencing
+* Miyagi tool for combining reads from different pores for increased consensus accuracy
+* Slightly mutated forms of R9.4 have been tested; could release a variant-pore flow cell in a few weeks if there is interest
+* Flongle early-access begins now, released commercially in Q3
+* Zumbador's official name is Ubiquibopsy (or Ubik tube)
+* V2 VolTRAX (heat, PCR, 10 samples) is available for ordering in the store
+* New SkunkWorx technology: a combined MinION + VolTRAX, dynamically embeds pores between droplets
+    * *Too much novel stuff to summarise, see [here](#skunkworx)*
+
+## Introduction
 
 * Next year O2 arena -- looks like a nanopore, fits 20,000 people
 * Every year, I have been told that I need to do this: promised investors I would do a live demo.
 * Have been spitting in tubes, but soomeone else will do the prep.
-* Ruth Moisie takes a tubefull of spit from Clive.
+* Ruth Moysey takes a tubefull of spit from Clive.
 
 ## Recap - get into rhythm
 
@@ -59,7 +75,7 @@ Introducing Clive Brown
 * First design had a few faults, including current cross-talk; all things ate into yield
 * This is a fixed-up version of the ASIC
 * Can now enable very-long run times with sustainable yield of up to 100 hours
-* Enables 30Gb on a MinION.
+* **Enables 30Gb on a MinION**
 
 ## PromethION
 
@@ -85,7 +101,7 @@ Introducing Clive Brown
 * Most getting over 50 Gb (this was the target)
 * Some getting over 60
 * ONT is getting internally over 170 Gb
-* A roadmap to move to 500 Gb per flow cell
+* **A roadmap to move to 500 Gb per flow cell**
 * These are NovaSeq-busting prices, provided you get the yields.
 * New flow cell: single channel. Also a redesign of the multi-channel flow cell.
 * Will make sure that all of MinION kits will work on PromethION (RNA coming in June)
@@ -114,13 +130,13 @@ Introducing Clive Brown
 * An in-silico selection
 * We wrote an API.
 
-* Entire innards of MinKNOW have been rejigged, read-until is coming back
+* **Entire innards of MinKNOW have been rejigged, read-until is coming back**
 
 * balancing amplicons
 * Sequencing a certain region of human
 
 * Coming back in second-half of year, coming back in anger
-* Will be ale to dynamically select molecules on the fly
+* Will be able to dynamically select molecules on the fly
 
 ## MinIT
 
@@ -133,16 +149,16 @@ Introducing Clive Brown
 * Can run off batteries. Can run off 12V supply.
 
 * Will put Guppy in there, will keep up with MinION basecalling, critical for ReadUntil
-* Also embedding Epi2Me.
+* **Also embedding Epi2Me.**
 
 * Pretty confident that a large number of people will want a hand with analysis
-* Should be orderable today.
+* **MinIT Should be orderable today.**
 
 * Have gone for GPUs in MinIT; going for neural-network based AI
 * A bunch of sequential matrix computations
 * Quite a large number of bioinformatics things can be optimised on the same hardware with the same performance.
 
-* MinION Mk1C - MinIT with the aility to load a flow cell, or flongle
+* **MinION Mk1C - MinIT with the aility to load a flow cell, or flongle**
 * Target December
 * Should be able to run a single flow cell without any external needs
 
@@ -167,7 +183,7 @@ Introducing Clive Brown
 
 * Will be commercialised
 * When you buy a flow cell; have invented something called MetriCoin
-* When you buy flow cells or reagents, will get MetriCoin, can use to run workflows
+* **When you buy flow cells or reagents, will get MetriCoin, can use to run workflows**
 * People who don't have bioinformatics support will have access to bioinformatics services
 
 ## Chemistry improvements
@@ -225,7 +241,7 @@ Introducing Clive Brown
 * Software is antediluvian, 4 years old
 
 * A lot of people have complained that they can't do amplicons
-* New kit optimised for PCR uses a special set of barcodes that will enable barcodes to be paired up (UMI).
+* **New kit optimised for PCR uses a special set of barcodes that will enable barcodes to be paired up (UMI).**
 * Will go back again, revamp it, and make a performant version.
 
 ## Targeted sequencing
@@ -240,7 +256,7 @@ Introducing Clive Brown
 * Can put RNA through the pore just like DNA
 * Proven very popular, there's lots of stuff in RNA
 * Not as performant as DNA product
-* Get full-length RNA moelcules, can see all the modifications
+* Get full-length RNA molecules, can see all the modifications
 * Can really get to the full-length biology.
 
 * Nanopore is quantitative, see all the splice formas.
@@ -275,7 +291,7 @@ Introducing Clive Brown
 
 * Current training set, issues with scaling / chunking of data
 * Still aren't learning all the context
-* We still trian on bacteria
+* We still train on bacteria
 * We don't learn in damage and modifications
 * There are some software limitations, and other issues.
 
@@ -283,12 +299,11 @@ Introducing Clive Brown
 * People don't exploit alll the information in the signal
 * Quite a lot of work to do.
 
-* Bases is not modelled, similar current for different sequences.
+* Bases are not modelled, similar current for different sequences.
 
 * Progress on homopolymers, over past few months.
 
-* Nanopolish is still the gold standard for preating these data
-* Can do well in some contexts.
+* Nanopolish is still the gold standard for treating these data, but medaka can do well in some contexts.
 
 ## Nanopore solutions
 
@@ -336,7 +351,7 @@ Introducing Clive Brown
 * What about combining together?
 * 50-fold R9 with 50-fold R10
 * can easily exceed Q40 in consensus, proof of concept
-* These methods are being implemented in miyagi tool, can use yourself (if you had R10 data).
+* **These methods are being implemented in miyagi tool, can use yourself (if you had R10 data).**
 
 * Still not using dwell in these data
 * Using time domain, can boost these further.
@@ -350,7 +365,8 @@ Introducing Clive Brown
 
 * Doing very well on variant calling, specifically on SNVs.
 
-* Have made at least one mutant of R9.4; R9.6. 9.4 gets one homopolymer wrong, 9.6 doesn't. Can make even variants of 9.4 that have significantly uncorrelated. Could release this in 2-3 weeks.
+* Have made at least one mutant of R9.4; R9.6. 9.4 gets one homopolymer wrong, 9.6 doesn't.
+* **Can make even variants of 9.4 that have significantly uncorrelated signal. Could release this in 2-3 weeks.**
 
 ## Template changes
 
@@ -396,7 +412,7 @@ Introducing Clive Brown
 
 * Looking at $90-$100 per flow cells, about 5-10% of the total treatment cost for dentist
 
-* Early access begins now, will release commercially in Q3
+* **Early access begins now, will release commercially in Q3**
 
 ## Where to go
 
@@ -411,7 +427,7 @@ Introducing Clive Brown
 * Idea is that you can take something very cheap, a piece of plastic, introduce a liquid because they're easy
 * After some reasonable time, like 10 minutes, can just sequence what's in there.
 
-## New name: Ubikwibopsy (Ubik tube)
+## **New name: Ubikwibopsy (Ubik tube)**
 
 * Ubiquitious
 * Kwick
@@ -448,78 +464,100 @@ Introducing Clive Brown
 
 ## VolTRAX
 
-Version 1 a while back. Main use is the proper version, version 2 ready to go out a bit later this year. Supports all kinds of complex lab workflows. 15 inlets. Can do heat, PCR, fluorescence detection. It is a lab on a chip.
+* Version 1 a while back.
+* Main use is the proper version, version 2 ready to go out a bit later this year.
+* Supports all kinds of complex lab workflows.
+* 15 inlets. 
+* Can do heat, PCR, fluorescence detection. It is a lab on a chip.
 
-Starter pack for V2 $8,000
+* Starter pack for V2 $8,000
 
-As I speak, the shop is open for orders, can buy a VolTRAX v2. Will prioritise people who got a V1.
+* **As I speak, the shop is open for orders, can buy a VolTRAX v2.**
+* Will prioritise people who got a V1.
 
-Can do up to 10 samples, 2xGridION. Pricing starts to get quite attractive for multiple samples.
+* Can do up to 10 samples, 2xGridION.
+* Pricing starts to get quite attractive for multiple samples.
 
 ## SkunkWorx
 
-A few years ago, pulled people into my office.
+* A few years ago, pulled people into my office, asked them to do a thing.
 
-Amazingly, people went off and did it.
+* Amazingly, people went off and did it.
 
-A VolTRAX - MinION hybrid, amalgamating into a single device. Have another DNA sequencer that can be made.
+* **A VolTRAX - MinION hybrid, amalgamating into a single device.**
+* Now have another DNA sequencer that can be made.
 
-Completely automated, very complicated droplet-based workflows can be built in. No physical handling, can work directly from cells.
+* Completely automated, very complicated droplet-based workflows can be built in.
+* No physical handling, can work directly from cells.
 
-Form dynamic membranes between droplets on the VolTRAX. Can insert a pore, and have a sequencer. Move the droplet to a certain part of the array and droplets look like a MinION channels.
+* Form dynamic membranes between droplets on the VolTRAX.
+* Can insert a pore, and have a sequencer.
+* Move the droplet to a certain part of the array and droplets look like a MinION channels.
 
-Squiggles are the squggles; they are the same.
+* Squiggles are the squggles; they are the same.
 
-Droplets can be quite small, or quite big.
+* Droplets can be quite small, or quite big.
 
-Can swap the droplet.
+* Can swap the droplet.
 
-Can access the trans side. Can take the things you sequenced, and PCR them, or sequence again.
+* Can access the trans side.
+* Can take the things you sequenced, and PCR them, or sequence again.
 
-Target is to get to 128 channels. More likely to be less than that. Currently 8-channel breadboard.
+* Target is to get to 128 channels.
+* More likely to be less than that.
+* Currently 8-channel breadboard.
 
-Extraction zone, Library zone, sequencing zone.
+* Extraction zone, Library zone, sequencing zone.
 
-Henrietta Lax cells being aligned and lysed. No shearing; what if you could just get whole chromosomes and put it between two droplets.
+* Henrietta Lacks cells being aligned and lysed.
+* No shearing; what if you could just get whole chromosomes and put it between two droplets.
 
-Lots of things you can do. We tend to stick DNA to the membrane. Can coat up the droplet with DNA, DNA whizzes around and will find pore within seconds. If you have a tiny amount of material that you want to mine digitally, can mine out that cell.
+* Lots of things you can do.
+* We tend to stick DNA to the membrane.
+* Can coat up the droplet with DNA, DNA whizzes around and will find pore within seconds.
+* If you have a tiny amount of material that you want to mine digitally, can mine out that cell.
 
-With read-until, can eject high-abundant stuff.
+* With read-until, can eject high-abundant stuff.
 
-Schemes where you can re-pair sequenced DNA and put it through again.
+* Schemes where you can re-pair sequenced DNA and put it through again.
 
-Can also just hybridise things to DNA. SOme Cas9 are SNP sensitive, can count thousands of presence - absense. Spit blood in, all in one, very flexible measuring device.
+* Can also just hybridise things to DNA.
+* Some Cas9 are SNP sensitive, can count thousands of presence - absense.
+* Spit blood in, all in one, very flexible measuring device.
 
-We have the proof of concept, all now about making the box. Will be coming your way. Not talking years.
+* We have the proof of concept, all now about making the box.
+* Will be coming your way; not talking years.
 
-The mind boggles of what you can do. A small platform at relatively low plex. Our next likely major product launch.
+* The mind boggles of what you can do.
+* A small platform at relatively low plex. Our next likely major product launch.
 
-## 
+## Timeline
 
-Revision D ASIC, can get now. Probably broadly by middle of Q3. Should see 20-30 Gb.
-Kit9 much improved ligation kit
-PromethION went on commerical release today
-PromethION flow cells orderable
-Epi2Me commericalisation
-Software umblocking fixes
-MinIT shipping in July
-Ambient shipping in July
-First flongle shipments in July
-Voltrax V2 in August
-Much more performant 1D² in August
-RNA upgrade in terms of yield / quality in September
-In December fully-performant PromethION (48 flow cells) - ONT has just got 3Tb internally
- - target is 12 Tb per run, equivalent to 3-4 NovaSeqs
-December Mk1C MinION
+* Revision D ASIC, can get now. Probably broadly by middle of Q3. Should see 20-30 Gb.
+* Kit9 much improved ligation kit
+* PromethION went on commerical release today
+* PromethION flow cells orderable
+* Epi2Me commericalisation
+* Software umblocking fixes
+* MinIT shipping in July
+* Ambient shipping in July
+* First flongle shipments in July
+* Voltrax V2 in August
+* Much more performant 1D² in August
+* RNA upgrade in terms of yield / quality in September
+* In December fully-performant PromethION (48 flow cells) 
+    * ONT has just got 3Tb internally
+    * target is 12 Tb per run, equivalent to 3-4 NovaSeqs
+* December Mk1C MinION
 
 ## Questions
 
-Flongle - should be able to be chuckable; throwing away electronics is difficult.
+* Flongle flow cells should be able to be chuckable; throwing away electronics is difficult.
 
-Multiple pores - Coverage will be reduced because errors aren't correlated. As long as you can pick the right one, which is the high and low quality base.
+* Multiple pores - Coverage will be reduced because errors aren't correlated. As long as you can pick the right one, which is the high and low quality base.
 
-Trying to get the same kits and settings on all devices.
+* Trying to get the same kits and settings on all devices.
 
-SmidgION - We can make it, that's not a problem. ASIC is reallyy cheap. Flongle comes first.
+* SmidgION - We can make it, that's not a problem. ASIC is reallyy cheap. Flongle comes first.
 
-R10 pore - frequency of homopolymers. Current software can call homopolymers as -1, some bias in software that is consistently doing it wrong. Will get a lot further with just incremental improvements.
+* R10 pore - frequency of homopolymers. Current software can call homopolymers as -1, some bias in software that is consistently doing it wrong. Will get a lot further with just incremental improvements.
