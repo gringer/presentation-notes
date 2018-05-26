@@ -47,13 +47,87 @@ output: html_document
 
 ## The Dunbar Number - 150
 
-* About the numer that were in the first nanopore conference
+* About the number that were in the first nanopore conference
 * Need to work out how to help people
 * Ninja programming schedule
     * Repeating some breakout sessions
     * A workshop to improve the digital community (Andy Davies)
     * 300 people have downloaded the software App
     * Interact button allows people to ask questions during plenary sessions
+
+# Angela Brooks
+
+* Every cell has the same genome, but different cell types have different functions
+* The transcriptome is what distinguishes cells
+
+## Polyadenylated RNAs
+
+* Have non-coding as well as protein-coding
+* Can be edited or modified; over 100 types of modifications exist
+* Limitations of short-read sequencing
+    * Fragmentation 
+    * Conversion into cDNA
+    * doing PCR (even a problem with long-read cDNA)
+
+## Nanopore Sequencing
+
+* Sequencing is 3´ to 5´ (not typical)
+* RNA consortium was formed to look at human cell lines
+* 6 universities sequencing GM12878
+* The same cell culture was sent to five institutes, a separate culture was done by Birmingham
+* Can go to github to see the data
+* 13 million native RNA reads, 24 million cDNA reads
+
+## Observations
+
+* Native RNA was longer than cDNA
+* Error rates about the same
+* Good correlation in gene expression levels
+* Also good correlation with Illumina
+* Birmingham clustered separately when using PCA
+* Same sample clustered well together
+
+## Read fragmentation
+
+* A lot of reads that seemed to be fragmented
+* MTCO1
+* Read length doesn't drop over time (so there's no fragmentation happening within the flow cell)
+* 45% of the reads were full length
+* 20% were partial due to artefacts (e.g. basecaller truncating the read)
+* 35% other partial reads, maybe due to sample prep, or degredation of RNA
+
+## Full-length assembly
+
+* Using orthogonal information to distingush full-length transcripts
+* e.g. ChipSeq - looking for the promoter region. If not correlated, then it's probably not full-length
+* Using short-read support for read correction
+* Can look at full length and compare to annotation
+* Can pick up novel transcripts
+* Largest high-confidence transcript: 10313 nucleotides with 48 exons
+
+## How many sequenced reads are needed?
+
+* At about 5M reads, the number of transcripts *start* to plateau
+* Transcripts keep getting detected at high coverage (more than 75k transcripts)
+
+## Challenges
+
+* Allele bias
+* Also looking at polyA tail lengths [see [polya_estimator](https://github.com/jts/nanopolish/tree/polya_estimator)]
+* Generally 30-150 nucleotides
+* Detecting m6A, found that it was kmer-dependent
+    * More differences for some, but not others
+* Remaining challenge: hard to distingush full from partial RNA
+
+## In-depth analysis of 100 reads
+
+* Done manually by Mark Akeson
+
+## Questions
+
+* Looked at squiggle for capturing the 5´ cap (methods in progress)
+* Using minimap
+* Longest read from titin (aiming for 100 kb)
 
 # Clive Brown
 
