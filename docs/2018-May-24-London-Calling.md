@@ -691,6 +691,44 @@ See the video [here](https://vimeo.com/272526835).
 
 * R10 pore - frequency of homopolymers. Current software can call homopolymers as -1, some bias in software that is consistently doing it wrong. Will get a lot further with just incremental improvements.
 
+# Lightning Talks / Day 2 (Thomas Bray)
+
+## Franz Josef Müller
+
+## Natacha Couto
+
+* University of gronigen
+* Looking at vancomycin-resistant enterococci
+* Intrinsic resistance to several microbial classes
+* VRE dissemination can exchange mobile genetic elements
+* Colleagues studying 36 isolates
+* Did Illumina sequencing, found 7 clusters
+* Some strains were clustered differently, but isolated from the same patient, or the same ward
+* Wanted to look at transposons
+* [Showed photo of PI - John, because he kept showing photos of her] -- she did the sequencing herself, it wasn't John's work
+* No shearing, assemblies using Unicycler
+* Could see transposons, look for differences, two on the chromosome, other two in a plasmid
+* Looking back at the tree, found that core genes could be linked by common transposons
+* Important to study structures, combine short-read sequencing with long-read sequencing
+
+## Stefanos Siozios
+
+## Rainer Waldmann
+
+* Likes idea of VolTRAX-based single-cell sequencer
+* Doing Illumina sequencing, need to fragment DNA, end up with only 3´ sequences
+* Problem with amplification, need to correctly identify UMIs and cell barcodes
+* Clustering gets easier if you know the barcode + UMI sequences
+* Did 1 nanopore run with 190 cells, 30M reads needed for 5X UMI
+* Did 951 cells using targeted nanopore sequencing
+* With one cell: reads with the same UMI should be the same molecule; some outliers
+* Nanopore data can be linked to Illumina
+* Good idea to use Illumina data with single-cell data
+
+## Yutaka Suzuki
+
+## Markus Haak
+
 # Liana Kafetzopoulou
 
 ## Intro
