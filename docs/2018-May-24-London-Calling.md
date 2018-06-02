@@ -695,6 +695,19 @@ See the video [here](https://vimeo.com/272526835).
 
 ## Franz Josef Müller
 
+* Nanopore sequencing of short repetitive DNA
+* A number of short repeat disorders (e.g. fragile X: GGC repeat, usually 30-50, but can expand up to 200 repeats)
+* Why nanopore sequencing? Looking at kilobase stretches of 100% GC sequence, southern blot remains a diagnostic tool
+* Good news: raw signal allows tracing / counting cases
+* Regardless of the system, no real ground truth of the repeat number (in the normal case)
+* Used nanopore-simulation (crohrandt)
+* Pulls data, generates raw signal
+* Entered defined repeat expansions based on the ground truth
+* Made another tool: nanostrike
+* Uses a signal model to identify repeat boundaries, quite good agreement with manual counts
+* Cpf1 enrichment
+* Poster actually describes a different tool
+
 ## Natacha Couto
 
 * University of gronigen
@@ -712,6 +725,18 @@ See the video [here](https://vimeo.com/272526835).
 * Important to study structures, combine short-read sequencing with long-read sequencing
 
 ## Stefanos Siozios
+* Works with microbes and arthropods
+* Microbes that pass from mother to offspring
+* Image of maternal transmission to oocytes, paternal transmission as well (but rare)
+* Biologically important, can alter vector competence
+* Can, for example, kill of male offspring
+* Has been hard to complete genomes
+* Only a minority of microbes can be cultured outside the host
+* Microbes have highly repetitive genomes
+* Repetitive content is difficult to resolve
+* Trying to make an improved reference genome (estimated size of about 3.5 Mb)
+* Large amount of extra-chromosomal elements; PacBio also failed
+* Two different library protocols. Very long reads provided the ability to assemble the main chromosome into a single circular contig - got extra-chromosomal elements as well
 
 ## Rainer Waldmann
 
@@ -727,7 +752,30 @@ See the video [here](https://vimeo.com/272526835).
 
 ## Yutaka Suzuki
 
+* Sequencing core laboratory
+* Started analysis with cancer cells
+* 9 patients, some initial success for cancer results
+* Used the same process to genotype malaria patients
+* Making a geographic distribution of modifications
+* Moving to Papua, needed to modify protocols
+* Replaced PCR with isothermal amplification
+* Expanded to global G-RAID meeting
+* BBC (UK) found out about this
+* Wanted to do the first human cancer genome
+* With the field kit, first do Malaria in Indonesia
+
 ## Markus Haak
+
+* In spare time, likes to detect unnatural bases (e.g. isoG, isoC)
+* Detection method should be PCR-free and polymerase-independent
+* MAX: looking at different restriction enzymes, method applicable for certain sequencing contexts
+* Developed iCG ased on sequencing reference DNA samples
+* Unnatural bases have substantial influence
+* Automated model, does event correction
+* During event correction, bad events are redistributed
+* Data points are based on Dynamic Time Warping, shift to correct misalignment due to unnatural base calling
+* Quite potentially adoptible to other bases or base calling
+* Haven't tested against existing modified natural bases
 
 # Liana Kafetzopoulou
 
